@@ -1,0 +1,14 @@
+var jsonData = pm.response.json();
+pm.test("Status code name has string", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Verify the success message", function () {
+    pm.expect(jsonData.message).to.eql("Account Details update for invoicing successful");
+})
+pm.test("Verify data returns accountNumber", function () {
+    pm.expect(pm.response.text()).to.include("accountNumber")
+})
+pm.test("Verify data returns organizationAccountDetailId", function () {
+    pm.expect(pm.response.text()).to.include("organizationAccountDetailId")
+})

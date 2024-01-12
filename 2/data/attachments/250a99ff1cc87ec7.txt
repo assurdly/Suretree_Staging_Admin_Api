@@ -1,0 +1,18 @@
+{
+    "queryString":"",
+    "organizationAccountDetailId":["3E67B635-38ED-4A5F-AE00-0A3633264692"],
+    "providerID":[],
+    "providerName":[],
+    "accountName":[],
+    "accountNumber":[],
+    "approvalStatus":[],
+    "bankName":[],
+    "isDefault":null, 
+    "isDisplayedOnInvoice": null,
+    "isApproved": null,
+    "dateCreated":null,
+    "rowsPerPage":7,
+    "pageNumber":1,
+    "sortType":"DESC",
+    "sortBy":"DateCreated"
+}

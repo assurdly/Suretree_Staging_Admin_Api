@@ -1,0 +1,1 @@
+{"isSuccess":false,"message":null,"data":null,"errors":["Oops, something went wrong.","No application found for AllApplication by Id: 7468c69c-9a61-4c1e-a135-f149cccc795e"],"statusCode":500}
