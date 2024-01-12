@@ -18,7 +18,7 @@ jobs:
           npm install -g newman newman-reporter-allure
           echo "Newman and newman-reporter-allure installed."
 
-      - name: Run Staging Customer - API tests
+      - name: Run Staging Admin - API tests
         if: always()
         continue-on-error: true
         run: |
