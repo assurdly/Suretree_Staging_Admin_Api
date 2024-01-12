@@ -1,0 +1,15 @@
+{
+    "Date": "Fri, 12 Jan 2024 17:46:56 GMT",
+    "Content-Type": "application/vnd.ms-excel",
+    "Content-Length": "506",
+    "Connection": "keep-alive",
+    "strict-transport-security": "max-age=2592000",
+    "content-disposition": "attachment; filename=Document.xls; filename*=UTF-8''Document.xls",
+    "x-powered-by": "ASP.NET",
+    "CF-Cache-Status": "DYNAMIC",
+    "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=AtXfUI6sLuOGt%2F16wNuEMYBkUkIQWFMMJTqJOF2m7yZxzxBXnChd%2BIWc8OCX%2FB7ReG0qLzwuDWWi735AVNzU%2BiZCOtdycfcLAW04vfO%2FoCYI9pVD6ElKpEWOYCFmeGXDRqNNAlLiOUMivpYADqLmlrUN\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+    "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+    "Server": "cloudflare",
+    "CF-RAY": "844738c7fa3b4614-DFW",
+    "alt-svc": "h3=\":443\"; ma=86400"
+}
