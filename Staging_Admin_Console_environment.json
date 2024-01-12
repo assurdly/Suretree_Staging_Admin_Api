@@ -1,0 +1,51 @@
+{
+	"id": "2c724437-0f83-4831-9959-9b8a9ac54116",
+	"name": "Staging - Admin_Console",
+	"values": [
+		{
+			"key": "baseUrl",
+			"value": "https://nc-console-staging.suretree.com",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "consoleToken",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjU4Nzk3ZWI2LTM1MjUtNGZlOC1iNDc1LTUyMWI0OWIzODE0OCIsIkN1c3RvbWVySWQiOiI4OGI2MDIxZC1mNDI0LTRlYjQtOGUxOC1iYjRmNTIzNDEyMzMiLCJVc2VyRnVsbE5hbWUiOiJCb2x1d2F0aWZlIE9sYXR1bmRlIiwiRW1haWwiOiJ0ZXN0ZXIuYWNjb3VudEBzdXJldHJlZS5jb20iLCJQaG9uZU51bWJlciI6IisyMzQ4MDU1NTE1NTQ1IiwianRpIjoiYmQ3NTI5OWMtMTVmNi00MmM3LWI2ZWUtMzNhMzU0NTg3OGE1IiwibmJmIjoxNjgxMzg2MzQ3LCJleHAiOjE2ODEzODc1NDcsImlhdCI6MTY4MTM4NjM0N30.B-K5XdkozvEDzF5GGag6cflMhi6tyYPCMkrUC1OZlI0",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "CustomerApplicationId",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "Auth_token",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "Refresh_token",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "CustomerId",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "admin_Auth_token",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2024-01-12T17:28:22.495Z",
+	"_postman_exported_using": "Postman/10.22.1-240110-0323"
+}
