@@ -1,0 +1,4 @@
+{
+    "SponsoredProductId" : "b86d9hsg542725f-946sysdv22-4cfhydtsbs5-ad0hsbssm80-f5a0bhstsrs21e8688",
+    "ExpireInDays": 35
+}

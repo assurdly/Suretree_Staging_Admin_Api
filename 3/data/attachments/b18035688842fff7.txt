@@ -1,0 +1,12 @@
+pm.test("Status code name has string", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Verify successMessage", function () {
+    pm.response.to.have.jsonBody('successMessage', 'Data retrieve successfully.');
+});
+pm.test("Verify errorMessage is null", function () {
+    pm.response.to.have.jsonBody('errorMessage', null);
+});
+pm.test("Check responseCode is 200", function () {
+    pm.response.to.have.jsonBody('responseCode', 200);
+});

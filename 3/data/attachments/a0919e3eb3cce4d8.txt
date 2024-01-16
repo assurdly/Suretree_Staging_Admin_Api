@@ -1,0 +1,20 @@
+var jsonData = pm.response.json();
+pm.test("Response status code is 200", function () {
+    pm.expect(pm.response.code).to.equal(200);
+});
+pm.test("Verify that \"isSuccess\" is true", function () {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.isSuccess).to.be.true;
+});
+pm.test("Verify message is 'Success'", function () {
+    pm.expect(jsonData.message).to.eql("Success");
+});
+pm.test("Verify that 'errors' is null", function () {
+    const responseData = pm.response.json();
+
+    pm.expect(responseData.errors).to.equal(null);
+});
+pm.test("Verify 'data' is an array and not empty", function () {
+    pm.expect(jsonData.data).to.be.an('array').that.is.not.empty;
+});
