@@ -1,0 +1,20 @@
+var jsonData = pm.response.json();
+pm.test("Status code is 400", function () {
+    pm.response.to.have.status(400);
+});
+pm.test("Error message is 'Invalid customer ID.'", function () {
+    pm.expect(jsonData.errorMessage).to.eql("Invalid customer ID.");
+});
+pm.test("Details is null", function () {
+    pm.expect(jsonData.details).to.be.null;
+});
+
+pm.test("SuccessMessage is null", function () {
+    pm.expect(jsonData.successMessage).to.be.null;
+});
+pm.test("Details is null", function () {
+    pm.expect(jsonData.details).to.be.null;
+});
+pm.test("responseCode is 400", function () {
+    pm.expect(jsonData.responseCode).to.eql(400);
+});

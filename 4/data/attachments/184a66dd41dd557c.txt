@@ -1,0 +1,7 @@
+[
+    {
+        "accountNumber": "",
+        "isDisplayedOnInvoice": true,
+        "organizationAccountDetailId": ""
+    }
+]

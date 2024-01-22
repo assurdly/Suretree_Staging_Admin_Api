@@ -1,0 +1,7 @@
+[
+    {
+        "accountNumber": "2071263559",
+        "isDisplayedOnInvoice": true,
+        "organizationAccountDetailId": "FYGU43567890-34"
+    }
+]
