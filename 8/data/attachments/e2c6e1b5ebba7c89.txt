@@ -1,0 +1,6 @@
+pm.test("Status code is 400", function () {
+    pm.response.to.have.status(400);
+});
+pm.test("Status code name has string", function () {
+    pm.response.to.have.status("Bad Request");
+});
