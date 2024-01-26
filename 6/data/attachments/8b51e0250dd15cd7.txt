@@ -1,0 +1,1 @@
+{"isSuccess":true,"message":null,"data":{"successMessage":null,"errorMessage":null,"responseCode":0,"total":0,"totalPages":0,"rowsPerPage":0,"pageItemsCount":0,"pageNumber":0,"queryString":"","list":[],"details":null},"errors":["No record was found"],"statusCode":200}
