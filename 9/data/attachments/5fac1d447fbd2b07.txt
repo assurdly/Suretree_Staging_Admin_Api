@@ -1,0 +1,12 @@
+JsonData = pm.response.json()
+Request = JSON.parse(pm.request.body.raw)
+pm.collectionVariables.set("LoanSponsoredProductId", JsonData.data.sponsoredProductId)
+pm.collectionVariables.set("LoanCategoryId", Request.CategoryID)
+pm.collectionVariables.set("LoanProductId", Request.ProductId)
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Status code name has string", function () {
+    pm.response.to.have.status("OK");
+});
