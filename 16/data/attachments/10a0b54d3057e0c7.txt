@@ -1,0 +1,12 @@
+JsonData = pm.response.json()
+Request = JSON.parse(pm.request.body.raw)
+pm.collectionVariables.set("SavingsSponsoredProductId", JsonData.data)
+pm.collectionVariables.set("SavingsCategoryId", Request.CategoryID)
+pm.collectionVariables.set("SavingsProductId", Request.ProductId)
+
+pm.test("Status code is 400", function () {
+    pm.response.to.have.status(400);
+});
+pm.test("Status code name has string", function () {
+    pm.response.to.have.status("Bad Request");
+});
