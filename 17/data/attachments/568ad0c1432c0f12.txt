@@ -1,0 +1,38 @@
+pm.test('Status code is 200', function () {
+    pm.response.to.have.status(200);
+})
+
+pm.test('Verify MiddleName is returned', function () {
+    pm.expect(pm.response.text()).to.include('MiddleName');
+})
+
+pm.test('Verify CustomerId is returned', function () {
+    const customerId = pm.response.json().Details.CustomerId;
+    pm.expect(customerId).to.not.be.null;
+    pm.expect(customerId).to.not.be.empty;
+})
+
+pm.test('FirstName should be returned', function () {
+    const firstName = pm.response.json().Details.FirstName;
+    pm.expect(firstName).to.not.be.null;
+    pm.expect(firstName).to.not.be.empty;
+})
+
+pm.test('LastName should be returned', function () {
+    const lastName = pm.response.json().Details.LastName;
+    pm.expect(lastName).to.not.be.null;
+    pm.expect(lastName).to.not.be.empty;
+})
+
+pm.test('PhoneNumber should be returned', function () {
+    const phoneNumber = pm.response.json().Details.PhoneNumber;
+    pm.expect(phoneNumber).to.not.be.null;
+    pm.expect(phoneNumber).to.not.be.empty;
+})
+
+pm.test('Gender should be returned', function () {
+    const gender = pm.response.json().Details.Gender;
+    pm.expect(gender).to.not.be.null;
+    pm.expect(gender).to.not.be.empty;
+})
+

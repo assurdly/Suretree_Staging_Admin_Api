@@ -1,0 +1,1 @@
+{"isSuccess":true,"message":"Application status has been updated successfully.","data":true,"errors":null,"statusCode":200}
