@@ -1,0 +1,6 @@
+{
+    "customerIds": [
+        "3f294963-5f24-4dba-9e18-23cbe79e2d3b",
+        "6663fe0a-214c-48e3-84d5-5a8b7912bbca"
+    ]
+}

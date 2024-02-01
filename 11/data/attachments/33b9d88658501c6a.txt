@@ -1,0 +1,38 @@
+var jsonData = pm.response.json();
+pm.test("Response status code is 200", function () {
+    pm.expect(pm.response.code).to.equal(200);
+});
+pm.test("Verify that \"isSuccess\" is true", function () {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.isSuccess).to.be.true;
+});
+pm.test("Verify message is 'Success'", function () {
+    pm.expect(jsonData.message).to.eql("Success");
+});
+pm.test("Verify that 'errors' is null", function () {
+    const responseData = pm.response.json();
+
+    pm.expect(responseData.errors).to.equal(null);
+});
+pm.test("Verify 'data' is an object", function () {
+    pm.expect(jsonData.data).to.be.an('object');
+});
+pm.test("Verify 'records' array is present and not empty", function () {
+    pm.expect(jsonData.data.records).to.be.an('array').that.is.not.empty;
+});
+pm.test("Verify properties of the first record", function () {
+    var firstRecord = jsonData.data.records[0];
+
+    pm.expect(firstRecord).to.have.property("organizationAccountDetailId").that.is.a("string");
+    pm.expect(firstRecord).to.have.property("providerID").that.is.a("string");
+    pm.expect(firstRecord).to.have.property("providerName").that.is.a("string");
+    pm.expect(firstRecord).to.have.property("accountNumber").that.is.a("string");
+    pm.expect(firstRecord).to.have.property("accountName").that.is.a("string");
+    pm.expect(firstRecord).to.have.property("bankName").that.is.a("string");
+    pm.expect(firstRecord).to.have.property("isDefault").that.is.a("boolean");
+    pm.expect(firstRecord).to.have.property("isApproved").that.is.a("boolean");
+    pm.expect(firstRecord).to.have.property("isDisplayedOnInvoice").that.is.a("boolean");
+    pm.expect(firstRecord).to.have.property("approvalStatus").that.is.a("string");
+    pm.expect(firstRecord).to.have.property("dateCreated").that.is.a("string");
+});
