@@ -5821,7 +5821,7 @@
 								"id": "0b91ad81-6fa9-451b-81ba-40f542eed2c2",
 								"exec": [
 									"pm.test(\"Status code is 404\", function () {\r",
-									"    pm.response.to.have.status(404));\r",
+									"    pm.response.to.have.status(404);\r",
 									"});\r",
 									"pm.test(\"Status code name has 'Not Found'\", function () {\r",
 									"    pm.response.to.have.status(\"Not Found\");\r",
