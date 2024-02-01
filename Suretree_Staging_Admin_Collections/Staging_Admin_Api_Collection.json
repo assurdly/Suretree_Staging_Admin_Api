@@ -2882,7 +2882,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{Auth_token}}"
+								"token": "{{admin_Auth_token}}"
 							}
 						},
 						"method": "GET",
@@ -3006,7 +3006,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{Auth_token}}"
+								"token": "{{admin_Auth_token}}"
 							}
 						},
 						"method": "POST",
