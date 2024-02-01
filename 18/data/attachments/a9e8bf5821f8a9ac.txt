@@ -1,0 +1,23 @@
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Status code name has string", function () {
+    pm.response.to.have.status("OK");
+});
+
+pm.test("Body matches isSuccess", function () {
+    pm.expect(pm.response.text()).to.include(true);
+});
+pm.test("Body matches message", function () {
+    pm.expect(pm.response.text()).to.include("Success");
+});
+
+pm.test("Body matches data", function () {
+    pm.expect(pm.response.text()).to.include(true);
+});
+pm.test("Body matches errors", function () {
+    pm.expect(pm.response.text()).to.include(null);
+});
+pm.test("Body matches statusCode ", function () {
+    pm.expect(pm.response.text()).to.include(200);
+});

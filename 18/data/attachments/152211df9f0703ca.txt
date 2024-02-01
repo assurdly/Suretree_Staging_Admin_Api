@@ -1,0 +1,45 @@
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Verify that responseData contains 'isSuccess' property", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData).to.have.property('isSuccess');
+});
+
+pm.test("Verify that responseData contains 'message' property", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData).to.have.property('message');
+});
+pm.test("Verify that \"isSuccess\" is true", function () {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.isSuccess).to.be.true;
+});
+
+
+pm.test("Verify that 'data' is true", function () {
+  const responseData = pm.response.json();
+  
+  pm.expect(responseData.data).to.be.true;
+});
+
+pm.test("Verify that responseData contains 'data' property", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData).to.have.property('data');
+});
+
+pm.test("Verify that responseData contains 'errors' property", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData).to.have.property('errors');
+});
+
+pm.test("Verify that responseData contains 'statusCode' property", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData).to.have.property('statusCode');
+});
+pm.test("Verify that 'errors' is null", function () {
+    const responseData = pm.response.json();
+
+    pm.expect(responseData.errors).to.equal(null);
+});

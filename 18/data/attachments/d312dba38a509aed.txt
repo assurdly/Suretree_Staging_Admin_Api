@@ -1,0 +1,6 @@
+{
+     "organizationAccountDetailId":"",
+     "accountNumber":"3810094479",
+     "accountName":"damilola oyesina",
+     "bankId":"b0d7e4af-23d3-4362-b67b-1d5802ac131e"
+}
