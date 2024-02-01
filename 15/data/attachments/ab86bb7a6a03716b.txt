@@ -1,0 +1,15 @@
+var statusArray = pm.response.json();
+pm.test("Response time is less than 200ms", function () {
+    pm.expect(pm.response.responseTime).to.be.below(300);
+});
+
+pm.test("Verify statusArray is present and not empty", function () {
+    pm.expect(statusArray).to.be.an('array').that.is.not.empty;
+});
+pm.test("Verify the specific status values", function () {
+    var expectedStatusValues = ["Approved", "Rejected", "Deleted", "Submitted", "Updated"];
+    pm.expect(statusArray).to.eql(expectedStatusValues);
+});
+pm.test("Status code name has string", function () {
+    pm.response.to.have.status(200);
+});

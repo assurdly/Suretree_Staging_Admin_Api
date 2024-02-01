@@ -1,0 +1,6 @@
+{
+    "CommonApplicationId": "8a216f48-83ac-4059-b0c7-7c4571a5fa77",
+    "SavingsStatus": "Provider Notified",
+    "Comment": "Provider notified on submit application",
+    "SavingsPaymentStatus": null
+}

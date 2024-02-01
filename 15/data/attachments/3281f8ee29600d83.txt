@@ -1,0 +1,11 @@
+pm.test("Status code is 400", function () {
+    pm.response.to.have.status(400);
+});
+
+pm.test("Status code name has string", function (){
+    pm.response.to.have.status("Bad Request");
+});
+pm.test("Your test message", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.message).to.eql("Please Provide a Sponsored Product Id.");
+});
