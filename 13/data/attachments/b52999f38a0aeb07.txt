@@ -1,0 +1,23 @@
+var jsonData = pm.response.json();
+
+pm.test("Status code name has string", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Verify isSuccess is true", function () {
+    pm.expect(jsonData.isSuccess).to.be.true;
+});
+pm.test("Verify message is 'Account number resolved'", function () {
+    pm.expect(jsonData.message).to.eql("Account number resolved");
+});
+pm.test("Verify errors array is null", function () {
+    pm.expect(jsonData.errors).to.be.null;
+});
+pm.test("Verify data is an object", function () {
+    pm.expect(jsonData.data).to.be.an('object');
+});
+pm.test("Verify properties of the data object", function () {
+    var dataObject = jsonData.data;
+
+    pm.expect(dataObject).to.have.property("accountNumber").that.is.a("string");
+    pm.expect(dataObject).to.have.property("accountName").that.is.a("string");
+});
