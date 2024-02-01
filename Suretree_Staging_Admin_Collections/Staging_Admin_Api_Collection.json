@@ -2888,7 +2888,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/v2/Application/get-customer-application-details?applicationId=7c2c703e-9b58-4c68-be8c-6905b50cbb74",
+							"raw": "{{baseUrl}}/api/v2/Application/get-customer-application-details?applicationId=1e61c601-4bed-4ecb-9afc-2acd7bef259d",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -2901,7 +2901,7 @@
 							"query": [
 								{
 									"key": "applicationId",
-									"value": "7c2c703e-9b58-4c68-be8c-6905b50cbb74"
+									"value": "1e61c601-4bed-4ecb-9afc-2acd7bef259d"
 								}
 							]
 						}
@@ -2981,7 +2981,8 @@
 									"    pm.expect(pm.response.text()).to.include(true);\r",
 									"});\r",
 									"pm.test(\"Body matches message\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"Saving application status has been updated successfully.\");\r",
+									"    var jsonData = pm.response.json()\r",
+									"    pm.expect(jsonData.message).to.include(\"Application status has been updated successfully.\");\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Body matches data\", function () {\r",
@@ -2994,6 +2995,14 @@
 									"    pm.expect(pm.response.text()).to.include(200);\r",
 									"});"
 								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a23981cd-9b3b-4399-bc2e-42134d7e0392",
+								"exec": [],
 								"type": "text/javascript"
 							}
 						}
