@@ -1,0 +1,6 @@
+pm.test("Verify that Status code is 401", function () {
+    pm.response.to.have.status(401);
+});
+pm.test("Verify that Test Code name is Unauthorized", function () {
+    pm.response.to.have.status("Unauthorized");
+});

@@ -1,0 +1,16 @@
+pm.test("Status code is 404", function () {
+    pm.response.to.have.status(404));
+});
+pm.test("Status code name has 'Not Found'", function () {
+    pm.response.to.have.status("Not Found");
+});
+var Response = pm.response.json()
+pm.test("isSuccess returns false", function () {
+    pm.expect(Response.isSuccess).to.eql(false)
+});
+pm.test("Error Message is returned", function () {
+    pm.expect(Response.errors[0]).to.include("No data was returned")
+});
+pm.test("Data to exist", function () {
+    pm.expect(Response.data).to.be.null
+});

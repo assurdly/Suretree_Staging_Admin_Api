@@ -1,0 +1,13 @@
+var jsonData = pm.response.json();
+pm.test("Response status code is 200", function () {
+    pm.expect(pm.response.code).to.equal(200);
+});
+pm.test("Verify isSuccess is false", function () {
+    pm.expect(jsonData.isSuccess).to.be.false;
+});
+pm.test("Verify data is null", function () {
+    pm.expect(jsonData.data).to.be.null;
+});
+pm.test("Verify message is null", function () {
+    pm.expect(jsonData.message).to.be.null;
+});
