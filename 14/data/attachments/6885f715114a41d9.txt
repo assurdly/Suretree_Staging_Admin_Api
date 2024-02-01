@@ -1,0 +1,14 @@
+{
+    "queryString":"Suretree Systems Limited",
+    "providerID":["3974f4da-4e7e-4c66-9516-bf68f185d8d1"],
+    "providerName":[],
+    "accountName":[],
+    "accountNumber":[],
+    "bankName":[],
+    "isDefault":true, 
+    "dateCreated":null,
+    "rowsPerPage":7,
+    "pageNumber":1,
+    "sortType":"DESC",
+    "sortBy":"DateCreated"
+}
