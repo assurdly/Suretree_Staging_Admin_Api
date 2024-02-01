@@ -5808,6 +5808,233 @@
 				}
 			],
 			"id": "b0f64b08-851c-4a65-8dd3-d925d197341b"
+		},
+		{
+			"name": "Role and permission",
+			"item": [
+				{
+					"name": "Return users by role/permissions-  invalid role ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0b91ad81-6fa9-451b-81ba-40f542eed2c2",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404));\r",
+									"});\r",
+									"pm.test(\"Status code name has 'Not Found'\", function () {\r",
+									"    pm.response.to.have.status(\"Not Found\");\r",
+									"});\r",
+									"var Response = pm.response.json()\r",
+									"pm.test(\"isSuccess returns false\", function () {\r",
+									"    pm.expect(Response.isSuccess).to.eql(false)\r",
+									"});\r",
+									"pm.test(\"Error Message is returned\", function () {\r",
+									"    pm.expect(Response.errors[0]).to.include(\"No data was returned\")\r",
+									"});\r",
+									"pm.test(\"Data to exist\", function () {\r",
+									"    pm.expect(Response.data).to.be.null\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ece7aac6-5902-4bee-8ce3-f0182bbd6e63",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "4fad7ae0-ae42-4f46-9427-fd0b7f6dc5a7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    \"09076789876\"\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v2/Users/get-users-by-roles"
+					},
+					"response": []
+				},
+				{
+					"name": "Retruen users by role/permissions - invalid authorization",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0b91ad81-6fa9-451b-81ba-40f542eed2c2",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"pm.test(\"Status code name has Unauthorized\", function () {\r",
+									"    pm.response.to.have.status(\"Unauthorized\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ebbd81fd-b731-45e8-8e99-91ab4e74f166",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "2c5a55f5-3fc4-4fa7-a5dd-13b9fd78ab24",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    \"1827153e-7064-4f16-b3f9-1003415e8502\"\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v2/Users/get-users-by-roles"
+					},
+					"response": []
+				},
+				{
+					"name": "API to return users by role/permissions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c0dc27f3-6a63-491d-8b11-20be7596bdc8",
+								"exec": [
+									"pm.test('Response Body Should Have userID', function () {\r",
+									"    pm.expect(pm.response.text()).to.include('userID');\r",
+									"})\r",
+									"\r",
+									"pm.test('Status code name Have 200', function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"})\r",
+									"\r",
+									"pm.test('Response Body Should Have city', function () {\r",
+									"    pm.expect(pm.response.text()).to.include('city');\r",
+									"});\r",
+									"\r",
+									"pm.test('Response Body Should Have contactAddress1', function () {\r",
+									"    pm.expect(pm.response.text()).to.include('contactAddress1');\r",
+									"})\r",
+									"\r",
+									"pm.test('Response Body Should Have contactAddress2', function () {\r",
+									"    pm.expect(pm.response.text()).to.include('contactAddress2');\r",
+									"})\r",
+									"\r",
+									"pm.test('Response Body Should Have countryStateId', function () {\r",
+									"    pm.expect(pm.response.text()).to.include('countryStateId');\r",
+									"})\r",
+									"\r",
+									"pm.test('Response Body Should Have dob', function () {\r",
+									"    pm.expect(pm.response.text()).to.include('dob');\r",
+									"})\r",
+									"\r",
+									"pm.test('Response Body Should Have emailAddress', function () {\r",
+									"    pm.expect(pm.response.text()).to.include('emailAddress');\r",
+									"})\r",
+									"\r",
+									"pm.test('Response Body Should Have firstName', function () {\r",
+									"    pm.expect(pm.response.text()).to.include('firstName');\r",
+									"})\r",
+									"\r",
+									"pm.test('Response Body Should Have gender', function () {\r",
+									"    pm.expect(pm.response.text()).to.include('gender');\r",
+									"})\r",
+									"\r",
+									"pm.test('Response Body Should Have lastName', function () {\r",
+									"    pm.expect(pm.response.text()).to.include('lastName');\r",
+									"})\r",
+									"\r",
+									"pm.test('Response Body Should Have maritalStatusID', function () {\r",
+									"    pm.expect(pm.response.text()).to.include('maritalStatusID');\r",
+									"})\r",
+									"\r",
+									"pm.test('Response Body Should Have numberOfDependents', function () {\r",
+									"    pm.expect(pm.response.text()).to.include('numberOfDependents');\r",
+									"})\r",
+									"\r",
+									"pm.test('Response Body Should Have phoneNumber', function () {\r",
+									"    pm.expect(pm.response.text()).to.include('phoneNumber');\r",
+									"})\r",
+									"\r",
+									"pm.test('Response Body Should Have postalCode', function () {\r",
+									"    pm.expect(pm.response.text()).to.include('postalCode');\r",
+									"})\r",
+									"\r",
+									"pm.test('Response Body Should Have roleIds', function () {\r",
+									"    pm.expect(pm.response.text()).to.include('roleIds');\r",
+									"})\r",
+									"\r",
+									"pm.test('Response Body Should Have title', function () {\r",
+									"    pm.expect(pm.response.text()).to.include('title');\r",
+									"})\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "ff1398be-d9d0-4525-b93d-10e89d8b6040",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token_Live}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    \"82f50f0e-4a18-4862-9180-623b101a80a7\"\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v2/Users/get-users-by-roles"
+					},
+					"response": []
+				}
+			],
+			"id": "55cab817-6687-4e34-a6c4-b64cad1ffb93"
 		}
 	],
 	"variable": [
