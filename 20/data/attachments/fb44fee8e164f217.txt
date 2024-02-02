@@ -1,0 +1,19 @@
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Status code name has 'OK'", function () {
+    pm.response.to.have.status("OK");
+});
+pm.test("Response time is less than 200ms", function () {
+    pm.expect(pm.response.responseTime).to.be.below(500);
+});
+ var Response = pm.response.json();
+var List = Response.List
+console.log(List.length)
+pm.test("Application list is not Null", function () {
+    pm.expect(Response.List).to.not.eql(null);
+});
+pm.test("CustomerApplicationId is a string", function () {
+    pm.expect(Response.List[0].CustomerApplicationId).is.string;
+});
+pm.environment.set("CustomerApplicationId", Response.List[0].CustomerApplicationId)
