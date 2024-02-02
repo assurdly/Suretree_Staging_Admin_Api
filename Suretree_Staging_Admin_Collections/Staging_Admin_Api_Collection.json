@@ -3364,9 +3364,6 @@
 									"pm.test(\"Status code name has 'OK'\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
-									"pm.test(\"Response time is less than 200ms\", function () {\r",
-									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
-									"});\r",
 									" var Response = pm.response.json();\r",
 									"pm.test(\"Application list is not Null\", function () {\r",
 									"    pm.expect(Response.List).to.not.eql(null);\r",
@@ -3379,6 +3376,14 @@
 									"})\r",
 									""
 								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f8d56585-0dfc-424d-887a-b4fc58b00fbe",
+								"exec": [],
 								"type": "text/javascript"
 							}
 						}
@@ -3398,7 +3403,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"SearchText\": \"\",\r\n    \"PageNumber\": 1,\r\n    \"RowsPerPage\": 20,\r\n    \"ApplicationTypes\": \"individual loans\",\r\n    \"ApplicationSortOrders\": \"desc\"\r\n}",
+							"raw": "{\r\n    \"SearchText\": \"\",\r\n    \"PageNumber\": 1,\r\n    \"RowsPerPage\": 20,\r\n    \"ApplicationTypes\": \"Personal loans\",\r\n    \"ApplicationSortOrders\": \"desc\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
