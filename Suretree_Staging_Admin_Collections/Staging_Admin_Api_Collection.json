@@ -2936,13 +2936,13 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{Auth_token}}"
+								"token": "{{admin_Auth_token}}"
 							}
 						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/v2/Application/download-customer-application-pdf?applicationId=7468c69c-9a61-4c1e-a135-f149cccc795e",
+							"raw": "{{baseUrl}}/api/v2/Application/download-customer-application-pdf?applicationId=1e61c601-4bed-4ecb-9afc-2acd7bef259d",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -2955,7 +2955,7 @@
 							"query": [
 								{
 									"key": "applicationId",
-									"value": "7468c69c-9a61-4c1e-a135-f149cccc795e"
+									"value": "1e61c601-4bed-4ecb-9afc-2acd7bef259d"
 								}
 							]
 						}
