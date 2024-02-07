@@ -762,7 +762,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{Auth_token}}"
+												"token": "{{admin_Auth_token}}"
 											}
 										},
 										"method": "POST",
@@ -834,378 +834,379 @@
 							"id": "9a1d3344-b52d-4784-a2ee-3aa65f383f98"
 						},
 						{
-							"name": "New Folder",
-							"item": [],
+							"name": "savings",
+							"item": [
+								{
+									"name": "Savings - Create Sponsor Product Campaign Empty ExpireinDays",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "adb6b74f-5001-4a91-88d8-469852413c00",
+												"exec": [
+													"JsonData = pm.response.json()\r",
+													"Request = JSON.parse(pm.request.body.raw)\r",
+													"pm.collectionVariables.set(\"SavingsSponsoredProductId\", JsonData.data)\r",
+													"pm.collectionVariables.set(\"SavingsCategoryId\", Request.CategoryID)\r",
+													"pm.collectionVariables.set(\"SavingsProductId\", Request.ProductId)\r",
+													"\r",
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"Bad Request\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "ce99276f-7eb9-4a5e-9a2c-1bf667c45169",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{Auth_token}}"
+											}
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n   \"ExpireInDays\": \"\",\r\n   \"ProductId\" : \"46fd9ca6-f179-4d56-9e45-b50b257a65c2\",\r\n   \"CategoryID\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v2/product/create-sponsor-product-campaign"
+									},
+									"response": []
+								},
+								{
+									"name": "Savings - Create Sponsor Product Campaign Empty Productid",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "adb6b74f-5001-4a91-88d8-469852413c00",
+												"exec": [
+													"JsonData = pm.response.json()\r",
+													"Request = JSON.parse(pm.request.body.raw)\r",
+													"pm.collectionVariables.set(\"SavingsSponsoredProductId\", JsonData.data)\r",
+													"pm.collectionVariables.set(\"SavingsCategoryId\", Request.CategoryID)\r",
+													"pm.collectionVariables.set(\"SavingsProductId\", Request.ProductId)\r",
+													"\r",
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"Bad Request\");\r",
+													"});\r",
+													"pm.test(\"Product should have an iD\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.message).to.eql(\"Please Provide a Product Id.\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "a3e071e0-a79f-407b-be71-f0cca638e21d",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{Auth_token}}"
+											}
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n   \"ExpireInDays\": 30,\r\n   \"ProductId\" : \"\",\r\n   \"CategoryID\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v2/product/create-sponsor-product-campaign"
+									},
+									"response": []
+								},
+								{
+									"name": "Savings - Create Sponsor Product Campaign invalid productId",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "adb6b74f-5001-4a91-88d8-469852413c00",
+												"exec": [
+													"JsonData = pm.response.json()\r",
+													"Request = JSON.parse(pm.request.body.raw)\r",
+													"pm.collectionVariables.set(\"SavingsSponsoredProductId\", JsonData.data)\r",
+													"pm.collectionVariables.set(\"SavingsCategoryId\", Request.CategoryID)\r",
+													"pm.collectionVariables.set(\"SavingsProductId\", Request.ProductId)\r",
+													"\r",
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"Bad Request\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "df274e4e-04ef-4fd9-b314-cc88c488aed4",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{admin_Auth_token}}"
+											}
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n   \"ExpireInDays\": 30,\r\n   \"ProductId\" : \"fa3d4ghsgsg5636-b07fhy74-44gddjfk%38-##nddhdh-591a91jhhh*30391c\",\r\n   \"CategoryID\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v2/product/create-sponsor-product-campaign"
+									},
+									"response": []
+								},
+								{
+									"name": "Savings - Create Sponsor Product Campaign Empty categoryid",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "adb6b74f-5001-4a91-88d8-469852413c00",
+												"exec": [
+													"JsonData = pm.response.json()\r",
+													"Request = JSON.parse(pm.request.body.raw)\r",
+													"pm.collectionVariables.set(\"SavingsSponsoredProductId\", JsonData.data)\r",
+													"pm.collectionVariables.set(\"SavingsCategoryId\", Request.CategoryID)\r",
+													"pm.collectionVariables.set(\"SavingsProductId\", Request.ProductId)\r",
+													"\r",
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"Bad Request\");\r",
+													"});\r",
+													"pm.test(\"Your test message\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.message).to.eql(\"Please Provide a Category Id.\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "6ae61e17-9857-4ed8-9c6b-04901a391cfd",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{admin_Auth_token}}"
+											}
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n   \"ExpireInDays\": 30,\r\n   \"ProductId\" : \"46fd9ca6-f179-4d56-9e45-b50b257a65c2\",\r\n   \"CategoryID\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v2/product/create-sponsor-product-campaign"
+									},
+									"response": []
+								},
+								{
+									"name": "Savings - Create Sponsor Product Campaign invalid category id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "adb6b74f-5001-4a91-88d8-469852413c00",
+												"exec": [
+													"JsonData = pm.response.json()\r",
+													"Request = JSON.parse(pm.request.body.raw)\r",
+													"pm.collectionVariables.set(\"SavingsSponsoredProductId\", JsonData.data)\r",
+													"pm.collectionVariables.set(\"SavingsCategoryId\", Request.CategoryID)\r",
+													"pm.collectionVariables.set(\"SavingsProductId\", Request.ProductId)\r",
+													"\r",
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"Bad Request\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "f2b499dd-679b-4147-8e7a-5e416c9f12b5",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{admin_Auth_token}}"
+											}
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n   \"ExpireInDays\": 30,\r\n   \"ProductId\" : \"46fd9ca6-f179-4d56-9e45-b50b257a65c2\",\r\n   \"CategoryID\": \"4d6eghgsgsg702c-76567hbdhd4-4ehaggs549a-b852625gvb9-2b44cabgstssvf6476\"\r\n\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v2/product/create-sponsor-product-campaign"
+									},
+									"response": []
+								},
+								{
+									"name": "Savings - Create Sponsor Product Campaign All fields Empty",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "adb6b74f-5001-4a91-88d8-469852413c00",
+												"exec": [
+													"JsonData = pm.response.json()\r",
+													"Request = JSON.parse(pm.request.body.raw)\r",
+													"pm.collectionVariables.set(\"SavingsSponsoredProductId\", JsonData.data)\r",
+													"pm.collectionVariables.set(\"SavingsCategoryId\", Request.CategoryID)\r",
+													"pm.collectionVariables.set(\"SavingsProductId\", Request.ProductId)\r",
+													"\r",
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"Bad Request\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "1507e888-833d-49ed-9316-9a9028de8183",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{Auth_token}}"
+											}
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n   \"ExpireInDays\": \"\",\r\n   \"ProductId\" : \"\",\r\n   \"CategoryID\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v2/product/create-sponsor-product-campaign"
+									},
+									"response": []
+								},
+								{
+									"name": "Savings - Create Sponsor Product Campaign",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "adb6b74f-5001-4a91-88d8-469852413c00",
+												"exec": [
+													"JsonData = pm.response.json()\r",
+													"Request = JSON.parse(pm.request.body.raw)\r",
+													"pm.collectionVariables.set(\"SavingsSponsoredProductId\", JsonData.data.sponsoredProductId)\r",
+													"pm.collectionVariables.set(\"SavingsCategoryId\", Request.CategoryID)\r",
+													"pm.collectionVariables.set(\"SavingsProductId\", Request.productId)\r",
+													"\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"pm.test(\"Your test message\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.message).to.eql(\"Sponsor Product Campaign created successfully.\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"id": "ffeb995a-00bc-4a74-9de3-b3ed808bc117",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{Auth_token}}"
+											}
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n   \"ExpireInDays\": 30,\r\n   \"ProductId\" : \"46fd9ca6-f179-4d56-9e45-b50b257a65c2\",\r\n   \"CategoryID\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v2/product/create-sponsor-product-campaign"
+									},
+									"response": []
+								}
+							],
 							"id": "3d6fd447-5882-4cb0-8337-1a33ddbf7fa1"
-						},
-						{
-							"name": "Savings - Create Sponsor Product Campaign",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "adb6b74f-5001-4a91-88d8-469852413c00",
-										"exec": [
-											"JsonData = pm.response.json()\r",
-											"Request = JSON.parse(pm.request.body.raw)\r",
-											"pm.collectionVariables.set(\"SavingsSponsoredProductId\", JsonData.data.sponsoredProductId)\r",
-											"pm.collectionVariables.set(\"SavingsCategoryId\", Request.CategoryID)\r",
-											"pm.collectionVariables.set(\"SavingsProductId\", Request.productId)\r",
-											"\r",
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"pm.test(\"Status code name has string\", function () {\r",
-											"    pm.response.to.have.status(\"OK\");\r",
-											"});\r",
-											"pm.test(\"Your test message\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.message).to.eql(\"Sponsor Product Campaign created successfully.\");\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "ffeb995a-00bc-4a74-9de3-b3ed808bc117",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{Auth_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n   \"ExpireInDays\": 30,\r\n   \"ProductId\" : \"46fd9ca6-f179-4d56-9e45-b50b257a65c2\",\r\n   \"CategoryID\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/api/v2/product/create-sponsor-product-campaign"
-							},
-							"response": []
-						},
-						{
-							"name": "Savings - Create Sponsor Product Campaign Empty ExpireinDays",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "adb6b74f-5001-4a91-88d8-469852413c00",
-										"exec": [
-											"JsonData = pm.response.json()\r",
-											"Request = JSON.parse(pm.request.body.raw)\r",
-											"pm.collectionVariables.set(\"SavingsSponsoredProductId\", JsonData.data)\r",
-											"pm.collectionVariables.set(\"SavingsCategoryId\", Request.CategoryID)\r",
-											"pm.collectionVariables.set(\"SavingsProductId\", Request.ProductId)\r",
-											"\r",
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"pm.test(\"Status code name has string\", function () {\r",
-											"    pm.response.to.have.status(\"Bad Request\");\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "ce99276f-7eb9-4a5e-9a2c-1bf667c45169",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{Auth_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n   \"ExpireInDays\": \"\",\r\n   \"ProductId\" : \"46fd9ca6-f179-4d56-9e45-b50b257a65c2\",\r\n   \"CategoryID\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/api/v2/product/create-sponsor-product-campaign"
-							},
-							"response": []
-						},
-						{
-							"name": "Savings - Create Sponsor Product Campaign Empty Productid",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "adb6b74f-5001-4a91-88d8-469852413c00",
-										"exec": [
-											"JsonData = pm.response.json()\r",
-											"Request = JSON.parse(pm.request.body.raw)\r",
-											"pm.collectionVariables.set(\"SavingsSponsoredProductId\", JsonData.data)\r",
-											"pm.collectionVariables.set(\"SavingsCategoryId\", Request.CategoryID)\r",
-											"pm.collectionVariables.set(\"SavingsProductId\", Request.ProductId)\r",
-											"\r",
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"pm.test(\"Status code name has string\", function () {\r",
-											"    pm.response.to.have.status(\"Bad Request\");\r",
-											"});\r",
-											"pm.test(\"Product should have an iD\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.message).to.eql(\"Please Provide a Product Id.\");\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "a3e071e0-a79f-407b-be71-f0cca638e21d",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{Auth_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n   \"ExpireInDays\": 30,\r\n   \"ProductId\" : \"\",\r\n   \"CategoryID\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/api/v2/product/create-sponsor-product-campaign"
-							},
-							"response": []
-						},
-						{
-							"name": "Savings - Create Sponsor Product Campaign invalid productId",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "adb6b74f-5001-4a91-88d8-469852413c00",
-										"exec": [
-											"JsonData = pm.response.json()\r",
-											"Request = JSON.parse(pm.request.body.raw)\r",
-											"pm.collectionVariables.set(\"SavingsSponsoredProductId\", JsonData.data)\r",
-											"pm.collectionVariables.set(\"SavingsCategoryId\", Request.CategoryID)\r",
-											"pm.collectionVariables.set(\"SavingsProductId\", Request.ProductId)\r",
-											"\r",
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"pm.test(\"Status code name has string\", function () {\r",
-											"    pm.response.to.have.status(\"Bad Request\");\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "df274e4e-04ef-4fd9-b314-cc88c488aed4",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{admin_Auth_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n   \"ExpireInDays\": 30,\r\n   \"ProductId\" : \"fa3d4ghsgsg5636-b07fhy74-44gddjfk%38-##nddhdh-591a91jhhh*30391c\",\r\n   \"CategoryID\": \"e068aadf-2116-41c3-9655-567a0e2bdd46\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/api/v2/product/create-sponsor-product-campaign"
-							},
-							"response": []
-						},
-						{
-							"name": "Savings - Create Sponsor Product Campaign Empty categoryid",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "adb6b74f-5001-4a91-88d8-469852413c00",
-										"exec": [
-											"JsonData = pm.response.json()\r",
-											"Request = JSON.parse(pm.request.body.raw)\r",
-											"pm.collectionVariables.set(\"SavingsSponsoredProductId\", JsonData.data)\r",
-											"pm.collectionVariables.set(\"SavingsCategoryId\", Request.CategoryID)\r",
-											"pm.collectionVariables.set(\"SavingsProductId\", Request.ProductId)\r",
-											"\r",
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"pm.test(\"Status code name has string\", function () {\r",
-											"    pm.response.to.have.status(\"Bad Request\");\r",
-											"});\r",
-											"pm.test(\"Your test message\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.message).to.eql(\"Please Provide a Category Id.\");\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "6ae61e17-9857-4ed8-9c6b-04901a391cfd",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{Auth_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n   \"ExpireInDays\": 30,\r\n   \"ProductId\" : \"46fd9ca6-f179-4d56-9e45-b50b257a65c2\",\r\n   \"CategoryID\": \"\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/api/v2/product/create-sponsor-product-campaign"
-							},
-							"response": []
-						},
-						{
-							"name": "Savings - Create Sponsor Product Campaign invalid category id",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "adb6b74f-5001-4a91-88d8-469852413c00",
-										"exec": [
-											"JsonData = pm.response.json()\r",
-											"Request = JSON.parse(pm.request.body.raw)\r",
-											"pm.collectionVariables.set(\"SavingsSponsoredProductId\", JsonData.data)\r",
-											"pm.collectionVariables.set(\"SavingsCategoryId\", Request.CategoryID)\r",
-											"pm.collectionVariables.set(\"SavingsProductId\", Request.ProductId)\r",
-											"\r",
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"pm.test(\"Status code name has string\", function () {\r",
-											"    pm.response.to.have.status(\"Bad Request\");\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "f2b499dd-679b-4147-8e7a-5e416c9f12b5",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{Auth_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n   \"ExpireInDays\": 30,\r\n   \"ProductId\" : \"46fd9ca6-f179-4d56-9e45-b50b257a65c2\",\r\n   \"CategoryID\": \"4d6eghgsgsg702c-76567hbdhd4-4ehaggs549a-b852625gvb9-2b44cabgstssvf6476\"\r\n\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/api/v2/product/create-sponsor-product-campaign"
-							},
-							"response": []
-						},
-						{
-							"name": "Savings - Create Sponsor Product Campaign All fields Empty",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "adb6b74f-5001-4a91-88d8-469852413c00",
-										"exec": [
-											"JsonData = pm.response.json()\r",
-											"Request = JSON.parse(pm.request.body.raw)\r",
-											"pm.collectionVariables.set(\"SavingsSponsoredProductId\", JsonData.data)\r",
-											"pm.collectionVariables.set(\"SavingsCategoryId\", Request.CategoryID)\r",
-											"pm.collectionVariables.set(\"SavingsProductId\", Request.ProductId)\r",
-											"\r",
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"pm.test(\"Status code name has string\", function () {\r",
-											"    pm.response.to.have.status(\"Bad Request\");\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "1507e888-833d-49ed-9316-9a9028de8183",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{Auth_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n   \"ExpireInDays\": \"\",\r\n   \"ProductId\" : \"\",\r\n   \"CategoryID\": \"\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/api/v2/product/create-sponsor-product-campaign"
-							},
-							"response": []
 						}
 					],
 					"id": "b2550357-c999-4f54-ad2e-ea7c8b04db93"
