@@ -1,4 +1,0 @@
-{
-    "SponsoredProductId" : "",
-    "SponsoredProductEnabled": true
-}
