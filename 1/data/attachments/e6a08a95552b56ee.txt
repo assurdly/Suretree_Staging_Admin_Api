@@ -1,7 +1,0 @@
-{
-    "SearchText": "",
-    "PageNumber": 1,
-    "RowsPerPage": 20,
-    "ApplicationTypes": "",
-    "ApplicationSortOrders": "desc"
-}

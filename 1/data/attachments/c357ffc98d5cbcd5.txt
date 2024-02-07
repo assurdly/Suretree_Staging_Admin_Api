@@ -1,1 +1,0 @@
-{"SuccessMessage":null,"ErrorMessage":null,"ResponseCode":200,"Total":0,"TotalPages":0,"RowsPerPage":20,"PageItemsCount":0,"PageNumber":1,"QueryString":"phone number","List":[],"Details":null}

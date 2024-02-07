@@ -1,3 +1,0 @@
-pm.test("Status code name has string", function () {
-    pm.response.to.have.status(401);
-});

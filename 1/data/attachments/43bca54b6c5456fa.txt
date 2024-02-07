@@ -1,7 +1,0 @@
-[
-    {
-        "organizationAccountDetailId": "ab931e86-93b4-40ba-838f-07229832f208",
-        "accountNumber": "3810094479",
-        "isDisplayedOnInvoice": true
-    }
-]
