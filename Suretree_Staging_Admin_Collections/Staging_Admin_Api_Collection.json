@@ -9,455 +9,475 @@
 			"name": "AUTH",
 			"item": [
 				{
-					"name": "Admin console auth",
-					"event": [
+					"name": "Auth",
+					"item": [
 						{
-							"listen": "test",
-							"script": {
-								"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
-								"exec": [
-									"\r",
-									"pm.test(\"Set signin token value\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.environment.set(\"admin_Auth_token\", jsonData.Details.AuthToken);    \r",
-									"});\r",
-									"pm.test(\"Set signin refresh token value\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.environment.set(\"Refresh_token\", jsonData.Details.RefreshToken);    \r",
-									"}); \r",
-									"pm.test(\"Set customerID\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.environment.set(\"CustomerId\", jsonData.Details.AccountDetails.CustomerId);    \r",
-									"});\r",
-									"\r",
-									"tests[\"Http status is 200]\"] = responseCode.code === 200;\r",
-									"var jsonData = JSON.parse(responseBody);\r",
-									"    tests[\"Response description is: \" + jsonData.SuccessMessage] = jsonData.SuccessMessage === \"Login successful.\";\r",
-									"    tests[\"Response description is: \" + jsonData.ResponseCode] = jsonData.ResponseCode === 200;\r",
-									""
-								],
-								"type": "text/javascript"
-							}
+							"name": "Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
+										"exec": [
+											"\r",
+											"pm.test(\"Set signin token value\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.environment.set(\"admin_Auth_token\", jsonData.Details.AuthToken);    \r",
+											"});\r",
+											"pm.test(\"Set signin refresh token value\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.environment.set(\"Refresh_token\", jsonData.Details.RefreshToken);    \r",
+											"}); \r",
+											"pm.test(\"Set customerID\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.environment.set(\"CustomerId\", jsonData.Details.AccountDetails.CustomerId);    \r",
+											"});\r",
+											"\r",
+											"tests[\"Http status is 200]\"] = responseCode.code === 200;\r",
+											"var jsonData = JSON.parse(responseBody);\r",
+											"    tests[\"Response description is: \" + jsonData.SuccessMessage] = jsonData.SuccessMessage === \"Login successful.\";\r",
+											"    tests[\"Response description is: \" + jsonData.ResponseCode] = jsonData.ResponseCode === 200;\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "11353498-74ca-4984-b65b-bca06b8aaff9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\": \"tester.account@suretree.com\",\r\n    \"Password\": \"demo123\",\r\n    \"UniqueIDFromFrontEnd\": \"c732386c2e6a8a8b13c-2fa83c954421dd6fb94-7ee90de95a0c4a92f49-48427e2a6aca38b1d5-043d4c1cf40a67107\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/Auth"
+							},
+							"response": []
+						},
+						{
+							"name": "Auth- email not found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
+										"exec": [
+											"\r",
+											"pm.test(\"Set signin token value\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.environment.set(\"admin_Auth_token\", jsonData.Details.AuthToken);    \r",
+											"});\r",
+											"pm.test(\"Set signin refresh token value\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.environment.set(\"Refresh_token\", jsonData.Details.RefreshToken);    \r",
+											"}); \r",
+											"pm.test(\"Set customerID\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.environment.set(\"CustomerId\", jsonData.Details.AccountDetails.CustomerId);    \r",
+											"});\r",
+											"\r",
+											"tests[\"Http status is 200]\"] = responseCode.code === 200;\r",
+											"var jsonData = JSON.parse(responseBody);\r",
+											"    tests[\"Response description is: \" + jsonData.SuccessMessage] = jsonData.SuccessMessage === \"Login successful.\";\r",
+											"    tests[\"Response description is: \" + jsonData.ResponseCode] = jsonData.ResponseCode === 200;\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "52ff5658-ee0c-4861-a93c-9ad8cb1c5095",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\": \"tester.account@suretree.com\",\r\n    \"Password\": \"demo123\",\r\n    \"UniqueIDFromFrontEnd\": \"c732386c2e6a8a8b13c-2fa83c954421dd6fb94-7ee90de95a0c4a92f49-48427e2a6aca38b1d5-043d4c1cf40a67107\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/Auth"
+							},
+							"response": []
+						},
+						{
+							"name": "Auth - non-existing email",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
+										"exec": [
+											"var resp = JSON.parse(responseBody)\r",
+											"\r",
+											"pm.test(\"Verify that Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400, 'Bad Request');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Verify that error message returns 'Oops, invalid user account.\", function () {\r",
+											"    pm.expect(resp.ErrorMessage).to.eql(\"Oops, invalid user account.\");\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "af8a09d0-a1c3-4e53-a049-902cfe3422c9",
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "1a28beb5-e086-4e8d-ba40-164b5dfc2a3c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\": \"tester@yopmail.com\",\r\n    \"Password\": \"demo123\",\r\n    \"UniqueIDFromFrontEnd\": \"c732386c2e6a8a8b13c-2fa83c954421dd6fb94-7ee90de95a0c4a92f49-48427e2a6aca38b1d5-043d4c1cf40a67107\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/Auth"
+							},
+							"response": []
+						},
+						{
+							"name": "Invalid Email: Admin console auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"ErrorMessage\");\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "5f37e789-d0cf-4f51-905f-65d285090307",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\": \"\",\r\n    \"Password\": \"demo123\",\r\n    \"UniqueIDFromFrontEnd\": \"c732386c2e6a8a8b13c-2fa83c954421dd6fb94-7ee90de95a0c4a92f49-48427e2a6aca38b1d5-043d4c1cf40a67107\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/Auth"
+							},
+							"response": []
+						},
+						{
+							"name": "Admin console auth Invalid password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"ErrorMessage\");\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "ba5672a9-634f-4dd6-9887-7196839f79ba",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\": \"tester.account@suretree.com\",\r\n    \"Password\": \"\",\r\n    \"UniqueIDFromFrontEnd\": \"c732386c2e6a8a8b13c-2fa83c954421dd6fb94-7ee90de95a0c4a92f49-48427e2a6aca38b1d5-043d4c1cf40a67107\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/Auth"
+							},
+							"response": []
+						},
+						{
+							"name": "Auth Invalid password and email",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"ErrorMessage\");\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "f7851321-de50-428a-b5e8-7d776e2674b6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\": \"\",\r\n    \"Password\": \"\",\r\n    \"UniqueIDFromFrontEnd\": \"c732386c2e6a8a8b13c-2fa83c954421dd6fb94-7ee90de95a0c4a92f49-48427e2a6aca38b1d5-043d4c1cf40a67107\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/Auth"
+							},
+							"response": []
+						},
+						{
+							"name": "No unique ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
+										"exec": [
+											"var resp = JSON.parse(responseBody)\r",
+											"\r",
+											"pm.test(\"Verify that Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Verify that Response code is 400\", function () {\r",
+											"    pm.expect(resp.ResponseCode).to.eql(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Verify that error message returns UniqueID is required\", function () {\r",
+											"    pm.expect(resp.ErrorMessage).to.eql(\"UniqueID is required.\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "dff971ce-2673-4981-a48f-2ac001c66f6a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\": \"tester.account@suretree.com\",\r\n    \"Password\": \"demo123\",\r\n    \"UniqueIDFromFrontEnd\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/Auth"
+							},
+							"response": []
 						}
 					],
-					"id": "11353498-74ca-4984-b65b-bca06b8aaff9",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"Email\": \"tester.account@suretree.com\",\r\n    \"Password\": \"demo123\",\r\n    \"UniqueIDFromFrontEnd\": \"c732386c2e6a8a8b13c-2fa83c954421dd6fb94-7ee90de95a0c4a92f49-48427e2a6aca38b1d5-043d4c1cf40a67107\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/Auth"
-					},
-					"response": []
+					"id": "ac6d569f-6512-4968-8b69-60bcbb454ffc"
 				},
 				{
-					"name": "Auth- email not found",
-					"event": [
+					"name": "Refresh",
+					"item": [
 						{
-							"listen": "test",
-							"script": {
-								"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
-								"exec": [
-									"\r",
-									"pm.test(\"Set signin token value\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.environment.set(\"admin_Auth_token\", jsonData.Details.AuthToken);    \r",
-									"});\r",
-									"pm.test(\"Set signin refresh token value\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.environment.set(\"Refresh_token\", jsonData.Details.RefreshToken);    \r",
-									"}); \r",
-									"pm.test(\"Set customerID\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.environment.set(\"CustomerId\", jsonData.Details.AccountDetails.CustomerId);    \r",
-									"});\r",
-									"\r",
-									"tests[\"Http status is 200]\"] = responseCode.code === 200;\r",
-									"var jsonData = JSON.parse(responseBody);\r",
-									"    tests[\"Response description is: \" + jsonData.SuccessMessage] = jsonData.SuccessMessage === \"Login successful.\";\r",
-									"    tests[\"Response description is: \" + jsonData.ResponseCode] = jsonData.ResponseCode === 200;\r",
-									""
-								],
-								"type": "text/javascript"
-							}
+							"name": "Refresh successful",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
+										"exec": [
+											"pm.test(\"Verify that Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Verify that SuccessMessage returns 'new token has been generated successfully\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.SuccessMessage).to.eql(\"New token has been generated successfully.\");\r",
+											"});\r",
+											"pm.test(\"Verify that error message returns null\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.ErrorMessage).to.eql(null);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "4a33889e-84cf-423e-a586-a5bc02d8aeb3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{admin_Auth_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"AuthToken\": \"{{Auth_token}}\",\r\n    \"RefreshToken\": \"{{Refresh_token}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/Auth"
+							},
+							"response": []
+						},
+						{
+							"name": "Refresh no authorization",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
+										"exec": [
+											"var resp = JSON.parse(responseBody)\r",
+											"\r",
+											"pm.test(\"Verify that Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Verify that status code is 401\", function () {\r",
+											"     pm.expect(resp.statusCode).to.eql(401);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "342aa473-2231-498e-b4cd-6a99e7c8d2d5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"AuthToken\": \"\",\r\n    \"RefreshToken\": \"{{Refresh_token}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/Auth"
+							},
+							"response": []
+						},
+						{
+							"name": "Refresh token invalid",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
+										"exec": [
+											"var resp = JSON.parse(responseBody)\r",
+											"\r",
+											"pm.test(\"Verify that Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Verify that status code is 401\", function () {\r",
+											"     pm.expect(resp.statusCode).to.eql(401);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "35488bcc-2bb8-403d-ba94-9ed610ec47a8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"AuthToken\": \"{{Auth_token}}\",\r\n    \"RefreshToken\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/Auth"
+							},
+							"response": []
 						}
 					],
-					"id": "52ff5658-ee0c-4861-a93c-9ad8cb1c5095",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"Email\": \"tester.account@suretree.com\",\r\n    \"Password\": \"demo123\",\r\n    \"UniqueIDFromFrontEnd\": \"c732386c2e6a8a8b13c-2fa83c954421dd6fb94-7ee90de95a0c4a92f49-48427e2a6aca38b1d5-043d4c1cf40a67107\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/Auth"
-					},
-					"response": []
-				},
-				{
-					"name": "Admin console auth non existing email",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
-								"exec": [
-									"var resp = JSON.parse(responseBody)\r",
-									"\r",
-									"pm.test(\"Verify that Status code is 400\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Verify that error message returns 'Oops, invalid user account.\", function () {\r",
-									"    pm.expect(resp.ErrorMessage).to.eql(\"Oops, invalid user account.\");\r",
-									"});\r",
-									"\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "1a28beb5-e086-4e8d-ba40-164b5dfc2a3c",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"Email\": \"tester@yopmail.com\",\r\n    \"Password\": \"demo123\",\r\n    \"UniqueIDFromFrontEnd\": \"c732386c2e6a8a8b13c-2fa83c954421dd6fb94-7ee90de95a0c4a92f49-48427e2a6aca38b1d5-043d4c1cf40a67107\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/Auth"
-					},
-					"response": []
-				},
-				{
-					"name": "Refresh successful",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
-								"exec": [
-									"pm.test(\"Verify that Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Verify that SuccessMessage returns 'new token has been generated successfully\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.SuccessMessage).to.eql(\"New token has been generated successfully.\");\r",
-									"});\r",
-									"pm.test(\"Verify that error message returns null\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.ErrorMessage).to.eql(null);\r",
-									"});\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "4a33889e-84cf-423e-a586-a5bc02d8aeb3",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{admin_Auth_token}}"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"AuthToken\": \"{{Auth_token}}\",\r\n    \"RefreshToken\": \"{{Refresh_token}}\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/Auth"
-					},
-					"response": []
-				},
-				{
-					"name": "Refresh no authorization",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
-								"exec": [
-									"var resp = JSON.parse(responseBody)\r",
-									"\r",
-									"pm.test(\"Verify that Status code is 400\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Verify that status code is 401\", function () {\r",
-									"     pm.expect(resp.statusCode).to.eql(401);\r",
-									"});\r",
-									"\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "342aa473-2231-498e-b4cd-6a99e7c8d2d5",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"AuthToken\": \"\",\r\n    \"RefreshToken\": \"{{Refresh_token}}\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/Auth"
-					},
-					"response": []
-				},
-				{
-					"name": "Refresh token invalid",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
-								"exec": [
-									"var resp = JSON.parse(responseBody)\r",
-									"\r",
-									"pm.test(\"Verify that Status code is 400\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Verify that status code is 401\", function () {\r",
-									"     pm.expect(resp.statusCode).to.eql(401);\r",
-									"});\r",
-									"\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "35488bcc-2bb8-403d-ba94-9ed610ec47a8",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"AuthToken\": \"{{Auth_token}}\",\r\n    \"RefreshToken\": \"\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/Auth"
-					},
-					"response": []
-				},
-				{
-					"name": "Invalid Email: Admin console auth",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
-								"exec": [
-									"pm.test(\"Status code is 400\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
-									"pm.test(\"Body matches string\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"ErrorMessage\");\r",
-									"})"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "5f37e789-d0cf-4f51-905f-65d285090307",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"Email\": \"\",\r\n    \"Password\": \"demo123\",\r\n    \"UniqueIDFromFrontEnd\": \"c732386c2e6a8a8b13c-2fa83c954421dd6fb94-7ee90de95a0c4a92f49-48427e2a6aca38b1d5-043d4c1cf40a67107\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/Auth"
-					},
-					"response": []
-				},
-				{
-					"name": "Admin console auth Invalid password",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
-								"exec": [
-									"pm.test(\"Status code is 400\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
-									"pm.test(\"Body matches string\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"ErrorMessage\");\r",
-									"})"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "ba5672a9-634f-4dd6-9887-7196839f79ba",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"Email\": \"tester.account@suretree.com\",\r\n    \"Password\": \"\",\r\n    \"UniqueIDFromFrontEnd\": \"c732386c2e6a8a8b13c-2fa83c954421dd6fb94-7ee90de95a0c4a92f49-48427e2a6aca38b1d5-043d4c1cf40a67107\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/Auth"
-					},
-					"response": []
-				},
-				{
-					"name": "Auth Invalid password and email",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
-								"exec": [
-									"pm.test(\"Status code is 400\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
-									"pm.test(\"Body matches string\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"ErrorMessage\");\r",
-									"})"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "f7851321-de50-428a-b5e8-7d776e2674b6",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"Email\": \"\",\r\n    \"Password\": \"\",\r\n    \"UniqueIDFromFrontEnd\": \"c732386c2e6a8a8b13c-2fa83c954421dd6fb94-7ee90de95a0c4a92f49-48427e2a6aca38b1d5-043d4c1cf40a67107\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/Auth"
-					},
-					"response": []
-				},
-				{
-					"name": "No unique ID",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "02b24df5-292b-432a-8ba6-ffbb7d2e8005",
-								"exec": [
-									"var resp = JSON.parse(responseBody)\r",
-									"\r",
-									"pm.test(\"Verify that Status code is 400\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Verify that Response code is 400\", function () {\r",
-									"    pm.expect(resp.ResponseCode).to.eql(400);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Verify that error message returns UniqueID is required\", function () {\r",
-									"    pm.expect(resp.ErrorMessage).to.eql(\"UniqueID is required.\");\r",
-									"});\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "dff971ce-2673-4981-a48f-2ac001c66f6a",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"Email\": \"tester.account@suretree.com\",\r\n    \"Password\": \"demo123\",\r\n    \"UniqueIDFromFrontEnd\": \"\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseUrl}}/api/Auth"
-					},
-					"response": []
+					"id": "1743bef1-9e1d-46e5-a6f1-f4ba58d69ae8"
 				}
 			],
 			"id": "0a448e6f-ab97-43c5-ac1d-1b90d3b349e4"
