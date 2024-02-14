@@ -543,7 +543,7 @@
 									"response": []
 								},
 								{
-									"name": "Loans- Create Sponsor Product Campaign Copy without expireindays",
+									"name": "Empty expireindays - Loans- Create Sponsor Product Campaign",
 									"event": [
 										{
 											"listen": "test",
@@ -593,7 +593,7 @@
 									"response": []
 								},
 								{
-									"name": "Loans- Create Sponsor Product Campaign without product id",
+									"name": "Empty product id - Loans- Create Sponsor Product Campaign",
 									"event": [
 										{
 											"listen": "test",
@@ -647,7 +647,7 @@
 									"response": []
 								},
 								{
-									"name": "Loans- Create Sponsor Product Campaign invalid produt id",
+									"name": "Invalid produt id - Loans- Create Sponsor Product Campaign",
 									"event": [
 										{
 											"listen": "test",
@@ -697,7 +697,7 @@
 									"response": []
 								},
 								{
-									"name": "Loans- Create Sponsor Product Campaign without category id",
+									"name": "Empty category id - Loans- Create Sponsor Product Campaign",
 									"event": [
 										{
 											"listen": "test",
