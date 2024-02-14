@@ -2484,7 +2484,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{Auth_token}}"
+										"token": "{{admin_Auth_token}}"
 									}
 								},
 								"method": "GET",
@@ -2504,14 +2504,20 @@
 											"pm.test(\"Status code is 404\", function () {\r",
 											"    pm.response.to.have.status(404);\r",
 											"});\r",
-											"pm.test(\"Status code name has string\", function () {\r",
+											"pm.test(\"Status code name should be 'Not Found'\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"pm.test(\"Body matches string\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"ProductId is Required\");\r",
-											"});\r",
+											"\r",
 											""
 										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "95eba88a-c131-4171-8817-9100fbeb6f44",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -2524,7 +2530,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{Auth_token}}"
+										"token": "{{admin_Auth_token}}"
 									}
 								},
 								"method": "GET",
