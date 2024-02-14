@@ -1,0 +1,5 @@
+{
+   "ExpireInDays": 30,
+   "ProductId" : "29319b4a-b375-4069-91cb-8a104407afc1",
+   "CategoryID": "d4ff9bf7-38d3-458d-814f-01249b88aef0"
+}
