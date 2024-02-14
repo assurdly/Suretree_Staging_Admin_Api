@@ -531,7 +531,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n   \"ExpireInDays\": 30,\r\n   \"ProductId\" : \"29319b4a-b375-4069-91cb-8a104407afc1\",\r\n   \"CategoryID\": \"4d6e702c-7654-4e9a-b8b9-2b44cabf6476\"\r\n}",
+											"raw": "{\r\n   \"ExpireInDays\": 30,\r\n   \"ProductId\" : \"29319b4a-b375-4069-91cb-8a104407afc1\",\r\n   \"CategoryID\": \"d4ff9bf7-38d3-458d-814f-01249b88aef0\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
