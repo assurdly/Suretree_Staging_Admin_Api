@@ -2507,7 +2507,6 @@
 											"pm.test(\"Status code name should be 'Not Found'\", function () {\r",
 											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});\r",
-											"\r",
 											""
 										],
 										"type": "text/javascript"
@@ -2516,7 +2515,7 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "95eba88a-c131-4171-8817-9100fbeb6f44",
+										"id": "d79613c7-9f54-4548-955b-ec75f9d58c2b",
 										"exec": [],
 										"type": "text/javascript"
 									}
