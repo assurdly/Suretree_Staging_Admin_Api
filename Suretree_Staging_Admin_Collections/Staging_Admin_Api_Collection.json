@@ -5064,7 +5064,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{admin_Auth_token}}"
+										"token": "{{admin_Auth_token_Live}}"
 									}
 								},
 								"method": "POST",
@@ -5282,11 +5282,19 @@
 											"    pm.expect(firstRecord).to.have.property(\"approvalStatus\").that.is.a(\"string\");",
 											"    pm.expect(firstRecord).to.have.property(\"dateCreated\").that.is.a(\"string\");",
 											"});",
-											"pm.test(\"Verify providerName is Branch\", function () {",
+											"pm.test(\"Verify providerName is Realty Invest Network Solution\", function () {",
 											"    var firstRecord = jsonData.data.records[0];",
-											"    pm.expect(firstRecord.providerName).to.eql(\"Branch\");",
+											"    pm.expect(firstRecord.providerName).to.eql(\"Realty Invest Network Solution\");",
 											"});"
 										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "0959c070-a979-4492-ba6c-0ae4e1482a47",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
