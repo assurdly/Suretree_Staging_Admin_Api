@@ -6094,6 +6094,19 @@
 				}
 			],
 			"id": "55cab817-6687-4e34-a6c4-b64cad1ffb93"
+		},
+		{
+			"name": "clear cache",
+			"id": "b0ebd0bd-68b4-4359-9e32-c293d6396bec",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{baseUrl}}/api/v2/cache/refresh"
+			},
+			"response": []
 		}
 	],
 	"variable": [
