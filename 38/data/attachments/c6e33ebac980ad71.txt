@@ -1,0 +1,7 @@
+{
+    "SearchText": "phone number",
+    "PageNumber": 1,
+    "RowsPerPage": 20,
+    "ApplicationTypes": "individual loans",
+    "ApplicationSortOrders": "desc"
+}
