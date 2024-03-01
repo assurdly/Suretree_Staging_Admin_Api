@@ -1844,7 +1844,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{Auth_token}}"
+										"token": "{{admin_Auth_token}}"
 									}
 								},
 								"method": "POST",
@@ -2019,9 +2019,17 @@
 											"    pm.response.to.have.status(400);\r",
 											"});\r",
 											"pm.test(\"Status code name has string\", function () {\r",
-											"    pm.response.to.have.status(\"OK\");\r",
+											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"    });"
 										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "37bfc224-04bf-4b31-b84a-44618f2ff648",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -2034,7 +2042,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{Auth_token}}"
+										"token": "{{admin_Auth_token}}"
 									}
 								},
 								"method": "POST",
