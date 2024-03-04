@@ -1,0 +1,10 @@
+var resp = JSON.parse(responseBody)
+
+pm.test("Verify that Status code is 400", function () {
+    pm.response.to.have.status(400);
+});
+
+pm.test("Verify that status code is 401", function () {
+     pm.expect(resp.statusCode).to.eql(401);
+});
+

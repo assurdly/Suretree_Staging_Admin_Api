@@ -1,0 +1,68 @@
+pm.test('Response Body Should Have userID', function () {
+    pm.expect(pm.response.text()).to.include('userID');
+})
+
+pm.test('Status code name Have 200', function () {
+    pm.response.to.have.status(200);
+})
+
+pm.test('Response Body Should Have city', function () {
+    pm.expect(pm.response.text()).to.include('city');
+});
+
+pm.test('Response Body Should Have contactAddress1', function () {
+    pm.expect(pm.response.text()).to.include('contactAddress1');
+})
+
+pm.test('Response Body Should Have contactAddress2', function () {
+    pm.expect(pm.response.text()).to.include('contactAddress2');
+})
+
+pm.test('Response Body Should Have countryStateId', function () {
+    pm.expect(pm.response.text()).to.include('countryStateId');
+})
+
+pm.test('Response Body Should Have dob', function () {
+    pm.expect(pm.response.text()).to.include('dob');
+})
+
+pm.test('Response Body Should Have emailAddress', function () {
+    pm.expect(pm.response.text()).to.include('emailAddress');
+})
+
+pm.test('Response Body Should Have firstName', function () {
+    pm.expect(pm.response.text()).to.include('firstName');
+})
+
+pm.test('Response Body Should Have gender', function () {
+    pm.expect(pm.response.text()).to.include('gender');
+})
+
+pm.test('Response Body Should Have lastName', function () {
+    pm.expect(pm.response.text()).to.include('lastName');
+})
+
+pm.test('Response Body Should Have maritalStatusID', function () {
+    pm.expect(pm.response.text()).to.include('maritalStatusID');
+})
+
+pm.test('Response Body Should Have numberOfDependents', function () {
+    pm.expect(pm.response.text()).to.include('numberOfDependents');
+})
+
+pm.test('Response Body Should Have phoneNumber', function () {
+    pm.expect(pm.response.text()).to.include('phoneNumber');
+})
+
+pm.test('Response Body Should Have postalCode', function () {
+    pm.expect(pm.response.text()).to.include('postalCode');
+})
+
+pm.test('Response Body Should Have roleIds', function () {
+    pm.expect(pm.response.text()).to.include('roleIds');
+})
+
+pm.test('Response Body Should Have title', function () {
+    pm.expect(pm.response.text()).to.include('title');
+})
+
