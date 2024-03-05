@@ -6108,7 +6108,101 @@
 			"item": [
 				{
 					"name": "Download loan application",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "38436323-6ca7-4dc8-ae0c-ad7084c4991e",
+								"exec": [
+									"pm.test('Status code is 200', function () {",
+									"    pm.response.to.have.status(200, \"OK\");",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "39a17787-5db5-44d7-8a73-017074ee5a29",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "f9f56589-b045-40bb-9172-48f239295c90",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v2/loans/get-download-document-url-link?ApplicationId=927929ec-2efe-4110-9ce7-802368c77257",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"loans",
+								"get-download-document-url-link"
+							],
+							"query": [
+								{
+									"key": "ApplicationId",
+									"value": "927929ec-2efe-4110-9ce7-802368c77257"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download loan application Copy",
+					"id": "72b79617-68d2-4fc9-bc02-196287bacd0d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v2/loans/get-download-document-url-link?ApplicationId=927929ec-2efe-4110-9ce7-802368c77257",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"loans",
+								"get-download-document-url-link"
+							],
+							"query": [
+								{
+									"key": "ApplicationId",
+									"value": "927929ec-2efe-4110-9ce7-802368c77257"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download loan application Copy 2",
+					"id": "46fc69f4-f92a-4fbe-b24b-65827692ecb6",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -6151,6 +6245,62 @@
 				{
 					"name": "update application status",
 					"id": "e2f9d783-6c07-451b-b6ab-4e05f451ff97",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerApplicationId\": \"54dab224-59c9-42cd-84d1-c3d6149c1478\",\n  \"loanStatusID\": \"5637A92B-33C4-49B6-AA07-311015E26209\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"OTHERS\",\n  \"otherCancellationComment\": \"This is for test\",\n  \"userId\": \"7126f73d-91e6-495a-b00f-d3c0d11c6c5b\",\n  \"customerId\": \"bdb90d8d-3fbc-4a27-950c-c6c0b5848a1e\",\n  \"providerLoanId\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/customers/UpdateLoanStatus"
+					},
+					"response": []
+				},
+				{
+					"name": "update application status Copy",
+					"id": "b232918b-8ead-444c-bc72-4ae4f49a4179",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerApplicationId\": \"54dab224-59c9-42cd-84d1-c3d6149c1478\",\n  \"loanStatusID\": \"5637A92B-33C4-49B6-AA07-311015E26209\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"OTHERS\",\n  \"otherCancellationComment\": \"This is for test\",\n  \"userId\": \"7126f73d-91e6-495a-b00f-d3c0d11c6c5b\",\n  \"customerId\": \"bdb90d8d-3fbc-4a27-950c-c6c0b5848a1e\",\n  \"providerLoanId\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/customers/UpdateLoanStatus"
+					},
+					"response": []
+				},
+				{
+					"name": "update application status Copy 2",
+					"id": "278abfda-ceb9-460c-9e68-9a39c3813bf0",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
