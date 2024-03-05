@@ -1,1 +1,0 @@
-{"isSuccess":false,"message":"Common application status has not been updated successfully!","data":false,"errors":null,"statusCode":0}
