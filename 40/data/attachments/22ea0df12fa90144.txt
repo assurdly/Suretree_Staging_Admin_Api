@@ -1,0 +1,13 @@
+pm.test("Status code is 401", function () {
+    pm.response.to.have.status(401);
+});
+pm.test("Status code name has 'Unauthorized'", function () {
+    pm.response.to.have.status("Unauthorized");
+});
+pm.test("Response time is less than 200ms", function () {
+    pm.expect(pm.response.responseTime).to.be.below(500);
+});
+var Response = pm.response.text();
+pm.test("Responsebody is empty", function () {
+    pm.expect(Response).to.be.empty;
+});

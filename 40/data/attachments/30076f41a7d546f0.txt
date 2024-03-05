@@ -1,0 +1,15 @@
+var resp = JSON.parse(responseBody)
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Status code name has string", function () {
+    pm.response.to.have.status("OK");
+});
+pm.test("Body matches string", function () {
+    pm.expect(pm.response.text()).to.include("Data retrive successfully");
+});
+
+pm.test("ResponseCode is 200", function () {
+    pm.expect(resp.responseCode).to.eql(200);
+});
