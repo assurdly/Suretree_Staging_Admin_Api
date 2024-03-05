@@ -6464,6 +6464,35 @@
 			"item": [
 				{
 					"name": "update application status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fb99b1a8-82c7-4ea0-849a-b3406b9df77f",
+								"exec": [
+									"var resp = JSON.parse(responseBody)",
+									"",
+									"pm.test(\"Verify that Status code is 200, 'OK'\", function () {",
+									"    pm.response.to.have.status(200, 'OK');",
+									"});",
+									"",
+									"pm.test(\"Verify that successMessage returns 'Email notification send successful'\", function () {",
+									"    pm.expect(resp.successMessage).to.eql('Email notification send successful');",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "313abeee-68ea-4d46-af62-48a28ca61433",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "e2f9d783-6c07-451b-b6ab-4e05f451ff97",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -6491,7 +6520,7 @@
 					"response": []
 				},
 				{
-					"name": "update application status Copy",
+					"name": "update application status - Invalid Customer ID",
 					"id": "b232918b-8ead-444c-bc72-4ae4f49a4179",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -6519,8 +6548,36 @@
 					"response": []
 				},
 				{
-					"name": "update application status Copy 2",
+					"name": "update application status - No Customer ID",
 					"id": "278abfda-ceb9-460c-9e68-9a39c3813bf0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerApplicationId\": \"54dab224-59c9-42cd-84d1-c3d6149c1478\",\n  \"loanStatusID\": \"5637A92B-33C4-49B6-AA07-311015E26209\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"OTHERS\",\n  \"otherCancellationComment\": \"This is for test\",\n  \"userId\": \"7126f73d-91e6-495a-b00f-d3c0d11c6c5b\",\n  \"customerId\": \"bdb90d8d-3fbc-4a27-950c-c6c0b5848a1e\",\n  \"providerLoanId\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/customers/UpdateLoanStatus"
+					},
+					"response": []
+				},
+				{
+					"name": "update application status - Invalid Loan Status ID",
+					"id": "fe6f28cb-b798-4b0b-ae38-0dbd9ac97ca9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
