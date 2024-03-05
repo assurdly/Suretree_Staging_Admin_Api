@@ -6104,6 +6104,127 @@
 			"id": "55cab817-6687-4e34-a6c4-b64cad1ffb93"
 		},
 		{
+			"name": "Download loan application",
+			"item": [
+				{
+					"name": "Download loan application",
+					"id": "f9f56589-b045-40bb-9172-48f239295c90",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v2/loans/get-download-document-url-link?ApplicationId=927929ec-2efe-4110-9ce7-802368c77257",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"loans",
+								"get-download-document-url-link"
+							],
+							"query": [
+								{
+									"key": "ApplicationId",
+									"value": "927929ec-2efe-4110-9ce7-802368c77257"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "ba9d6184-ab0d-41c8-9383-55f1ef3f37a0"
+		},
+		{
+			"name": "Update application status",
+			"item": [
+				{
+					"name": "update application status",
+					"id": "e2f9d783-6c07-451b-b6ab-4e05f451ff97",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerApplicationId\": \"54dab224-59c9-42cd-84d1-c3d6149c1478\",\n  \"loanStatusID\": \"5637A92B-33C4-49B6-AA07-311015E26209\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"OTHERS\",\n  \"otherCancellationComment\": \"This is for test\",\n  \"userId\": \"7126f73d-91e6-495a-b00f-d3c0d11c6c5b\",\n  \"customerId\": \"bdb90d8d-3fbc-4a27-950c-c6c0b5848a1e\",\n  \"providerLoanId\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/customers/UpdateLoanStatus"
+					},
+					"response": []
+				}
+			],
+			"id": "1cf0ff9f-bf48-46d1-b382-2d6cbb50f774"
+		},
+		{
+			"name": "Download loan application via url",
+			"item": [
+				{
+					"name": "Download loan application url",
+					"id": "3516d2f5-adcd-4699-9391-5391fb7ced57",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://nc-console-staging.suretree.com/api/v2/loans/get-download-document-url-link?ApplicationId=927929ec-2efe-4110-9ce7-802368c77257",
+							"protocol": "https",
+							"host": [
+								"nc-console-staging",
+								"suretree",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"loans",
+								"get-download-document-url-link"
+							],
+							"query": [
+								{
+									"key": "ApplicationId",
+									"value": "927929ec-2efe-4110-9ce7-802368c77257"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "9dc016a3-f499-4232-97bd-e2a87477b58f"
+		},
+		{
 			"name": "clear cache",
 			"id": "b0ebd0bd-68b4-4359-9e32-c293d6396bec",
 			"protocolProfileBehavior": {
