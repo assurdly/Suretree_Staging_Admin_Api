@@ -1,0 +1,17 @@
+var resp = JSON.parse(responseBody)
+
+pm.test("Verify that Status code is 401", function () {
+    pm.response.to.have.status(401, "Unauthorized");
+});
+pm.test("Verify that Status code is 401", function () {
+    pm.expect(resp.data).to.eql("Unauthorized");
+});
+pm.test("Verify that error message is 'Unauthorized'", function () {
+    pm.expect(resp.data).to.eql("Unauthorized");
+});
+pm.test("isSuccess returns false'", function () {
+    pm.expect(resp.isSuccess).to.eql(false);
+});
+pm.test("message returns Unauthorized'", function () {
+    pm.expect(resp.message).to.eql("Unauthorized");
+});
