@@ -6165,7 +6165,36 @@
 					"response": []
 				},
 				{
-					"name": "Download loan application Copy",
+					"name": "Download loan application",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1245f92a-7ad0-49f8-9454-c826fa8e5727",
+								"exec": [
+									"var resp = JSON.parse(responseBody)",
+									"",
+									"pm.test(\"Verify that Status code is 400\", function () {",
+									"    pm.response.to.have.status(400, \"Bad Request\");",
+									"});",
+									"",
+									"pm.test(\"Verify that error message is 'Email is required'\", function () {",
+									"    pm.expect(resp.ErrorMessage).to.eql(\"Oops, invalid ApplicationId\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "285ddd98-d002-4431-a7be-f7887c4ef8f7",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "72b79617-68d2-4fc9-bc02-196287bacd0d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -6180,7 +6209,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/v2/loans/get-download-document-url-link?ApplicationId=927929ec-2efe-4110-9ce7-802368c77257",
+							"raw": "{{baseUrl}}/api/v2/loans/get-download-document-url-link?ApplicationId=927929ec-2efe-4110-9ce7-802368c7725",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -6193,7 +6222,7 @@
 							"query": [
 								{
 									"key": "ApplicationId",
-									"value": "927929ec-2efe-4110-9ce7-802368c77257"
+									"value": "927929ec-2efe-4110-9ce7-802368c7725"
 								}
 							]
 						}
@@ -6202,6 +6231,38 @@
 				},
 				{
 					"name": "Download loan application Copy 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e14c354a-1705-4f87-8e81-1f82d86f5c6f",
+								"exec": [
+									"var resp = JSON.parse(responseBody)",
+									"",
+									"pm.test(\"Verify that Status code is 500\", function () {",
+									"    pm.response.to.have.status(500);",
+									"});",
+									"",
+									"pm.test(\"Verify that error message is 'The server was unable to process your request'\", function () {",
+									"    pm.expect(resp.data).to.eql(\"The server was unable to process your request\");",
+									"});",
+									"pm.test(\"isSuccess returns false'\", function () {",
+									"    pm.expect(resp.isSuccess).to.eql(\"The server was unable to process your request\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cec6f23f-5b7c-4900-9c8a-2ad0d235d7c4",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "46fc69f4-f92a-4fbe-b24b-65827692ecb6",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -6216,7 +6277,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/v2/loans/get-download-document-url-link?ApplicationId=927929ec-2efe-4110-9ce7-802368c77257",
+							"raw": "{{baseUrl}}/api/v2/loans/get-download-document-url-link?ApplicationId=",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -6229,7 +6290,7 @@
 							"query": [
 								{
 									"key": "ApplicationId",
-									"value": "927929ec-2efe-4110-9ce7-802368c77257"
+									"value": ""
 								}
 							]
 						}
