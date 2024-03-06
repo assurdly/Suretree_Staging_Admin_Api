@@ -1,0 +1,15 @@
+{
+    "Date": "Wed, 06 Mar 2024 04:09:57 GMT",
+    "Content-Type": "application/pdf",
+    "Content-Length": "107117",
+    "Connection": "keep-alive",
+    "strict-transport-security": "max-age=2592000",
+    "content-disposition": "attachment; filename=CustomerApplicationData-1e61c601-4bed-4ecb-9afc-2acd7bef259d-24030604-0954.pdf; filename*=UTF-8''CustomerApplicationData-1e61c601-4bed-4ecb-9afc-2acd7bef259d-24030604-0954.pdf",
+    "x-powered-by": "ASP.NET",
+    "CF-Cache-Status": "DYNAMIC",
+    "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=cvAO8sqpEcV1n4eYUGR83bgpfcnwxa64X9yih7W9oQ9nWCW8InJSSkTVYikoF0tFG3uv1rxx8WVSc%2Bu22tkrY3J2viQL7HDZRz3lj%2FO93B85KNv7bmVqst2EUszF6MqNeenogZAOiYn0HQ0ka%2BR%2F09ng\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+    "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+    "Server": "cloudflare",
+    "CF-RAY": "85ff7de56a935aff-IAD",
+    "alt-svc": "h3=\":443\"; ma=86400"
+}
