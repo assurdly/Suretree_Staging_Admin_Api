@@ -2884,7 +2884,7 @@
 					"response": []
 				},
 				{
-					"name": "single endpoint for application listing pages of Savings, Loan and FD Applications Copy",
+					"name": "single endpoint for application listing pages of Savings, Loan and FD Applications",
 					"event": [
 						{
 							"listen": "test",
