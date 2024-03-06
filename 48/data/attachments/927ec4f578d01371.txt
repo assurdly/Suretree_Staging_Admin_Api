@@ -1,0 +1,9 @@
+var resp = JSON.parse(responseBody)
+
+pm.test("Verify that Status code is 200, 'OK'", function () {
+    pm.response.to.have.status(200, 'OK');
+});
+
+pm.test("Verify that successMessage returns 'Email notification send successful'", function () {
+    pm.expect(resp.successMessage).to.eql('Email notification send successful');
+});

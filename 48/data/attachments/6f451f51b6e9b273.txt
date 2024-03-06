@@ -1,0 +1,1 @@
+{"successMessage":"Email notification send successful","errorMessage":null,"responseCode":200,"total":0,"totalPages":0,"rowsPerPage":0,"pageItemsCount":0,"pageNumber":0,"queryString":"","list":null,"details":"54dab224-59c9-42cd-84d1-c3d6149c1478"}
