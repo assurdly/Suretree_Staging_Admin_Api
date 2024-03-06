@@ -1,0 +1,13 @@
+{
+  "customerApplicationId": "54dab224-59c9-42cd-84d1-c3d6149c147",
+  "loanStatusID": "5637A92B-33C4-49B6-AA07-311015E26209",
+  "loanAmountDisbursed": 0,
+  "agreedLoanDuration": 0,
+  "agreedLoanInterestRate": 0,
+  "loanDisbursementDate": "2024-02-07T08:08:10.038Z",
+  "comment": "OTHERS",
+  "otherCancellationComment": "This is for test",
+  "userId": "",
+  "customerId": "585ec1ac-376d-4283-9cb7-78965b5313ca",
+  "providerLoanId": ""
+}
