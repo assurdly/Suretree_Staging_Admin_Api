@@ -2865,7 +2865,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{Auth_token}}"
+								"token": "{{admin_Auth_token}}"
 							}
 						},
 						"method": "POST",
@@ -6549,6 +6549,41 @@
 				},
 				{
 					"name": "update application status - No Customer ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "076a7195-01dd-4fad-a59c-b26d82f19563",
+								"exec": [
+									"pm.test(\"Verify that Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"Verify that Status code name has Bad Request\", function () {",
+									"    pm.response.to.have.status(\"Bad Request\");",
+									"});",
+									"var Response = pm.response.json()",
+									"pm.test(\"Verify that successMessage is null\", function () {",
+									"    pm.expect(Response.successMessage).to.eql(null)",
+									"});",
+									"pm.test(\"Verify that ErrorMessage is First name is required\", function () {",
+									"    pm.expect(Response.errorMessage).to.eql(\"First name is required.\")",
+									"});",
+									"pm.test(\"Verify that ResponseCode is 400\", function () {",
+									"    pm.expect(Response.responseCode).to.eql(400)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ceaa451f-1ea2-4415-8e13-db95d4538ba3",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "278abfda-ceb9-460c-9e68-9a39c3813bf0",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -6577,6 +6612,41 @@
 				},
 				{
 					"name": "update application status - Invalid Loan Status ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "33583524-9420-4feb-91e0-c35415001d9f",
+								"exec": [
+									"pm.test(\"Verify that Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"Verify that Status code name has Bad Request\", function () {",
+									"    pm.response.to.have.status(\"Bad Request\");",
+									"});",
+									"var Response = pm.response.json()",
+									"pm.test(\"Verify that successMessage is null\", function () {",
+									"    pm.expect(Response.successMessage).to.eql(null)",
+									"});",
+									"pm.test(\"Verify that ErrorMessage is First name is required\", function () {",
+									"    pm.expect(Response.errorMessage).to.eql(\"First name is required.\")",
+									"});",
+									"pm.test(\"Verify that ResponseCode is 400\", function () {",
+									"    pm.expect(Response.responseCode).to.eql(400)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e56725e1-0adb-419b-9973-684da371411c",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "fe6f28cb-b798-4b0b-ae38-0dbd9ac97ca9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -6605,6 +6675,41 @@
 				},
 				{
 					"name": "update application status - No Loan Status ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ec4bd862-0d99-4e80-94d5-196359addb2b",
+								"exec": [
+									"pm.test(\"Verify that Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"Verify that Status code name has Bad Request\", function () {",
+									"    pm.response.to.have.status(\"Bad Request\");",
+									"});",
+									"var Response = pm.response.json()",
+									"pm.test(\"Verify that successMessage is null\", function () {",
+									"    pm.expect(Response.successMessage).to.eql(null)",
+									"});",
+									"pm.test(\"Verify that ErrorMessage is First name is required\", function () {",
+									"    pm.expect(Response.errorMessage).to.eql(\"First name is required.\")",
+									"});",
+									"pm.test(\"Verify that ResponseCode is 400\", function () {",
+									"    pm.expect(Response.responseCode).to.eql(400)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "281f38da-fe57-4a45-9b6a-70632fd654a2",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "dff5c3e2-c426-4901-a380-4f7814b247cb",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -6633,6 +6738,41 @@
 				},
 				{
 					"name": "update application status - No comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "29cc270b-39b9-42f8-a1c3-bf64c3db7005",
+								"exec": [
+									"pm.test(\"Verify that Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"Verify that Status code name has Bad Request\", function () {",
+									"    pm.response.to.have.status(\"Bad Request\");",
+									"});",
+									"var Response = pm.response.json()",
+									"pm.test(\"Verify that successMessage is null\", function () {",
+									"    pm.expect(Response.successMessage).to.eql(null)",
+									"});",
+									"pm.test(\"Verify that ErrorMessage is First name is required\", function () {",
+									"    pm.expect(Response.errorMessage).to.eql(\"First name is required.\")",
+									"});",
+									"pm.test(\"Verify that ResponseCode is 400\", function () {",
+									"    pm.expect(Response.responseCode).to.eql(400)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "545a9337-eafb-4a74-ab5e-5c625b9f746e",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "abbc0f2d-4048-43bb-96bc-67e8dc147a17",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -6661,6 +6801,41 @@
 				},
 				{
 					"name": "update application status - Invalid user ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c333fa53-39ef-4f80-87e0-bd637612f3d3",
+								"exec": [
+									"pm.test(\"Verify that Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"Verify that Status code name has Bad Request\", function () {",
+									"    pm.response.to.have.status(\"Bad Request\");",
+									"});",
+									"var Response = pm.response.json()",
+									"pm.test(\"Verify that successMessage is null\", function () {",
+									"    pm.expect(Response.successMessage).to.eql(null)",
+									"});",
+									"pm.test(\"Verify that ErrorMessage is First name is required\", function () {",
+									"    pm.expect(Response.errorMessage).to.eql(\"First name is required.\")",
+									"});",
+									"pm.test(\"Verify that ResponseCode is 400\", function () {",
+									"    pm.expect(Response.responseCode).to.eql(400)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e8c856ab-db63-4133-ac58-f9617bedd7d5",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "3840b874-a114-4326-8e92-3e1d02d897e4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -6688,7 +6863,105 @@
 					"response": []
 				},
 				{
-					"name": "update application status - Invalid user ID Copy",
+					"name": "update application status - No user ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "830f5520-7dbf-4ee3-ab9d-903d279a0e7e",
+								"exec": [
+									"pm.test(\"Verify that Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"Verify that Status code name has Bad Request\", function () {",
+									"    pm.response.to.have.status(\"Bad Request\");",
+									"});",
+									"var Response = pm.response.json()",
+									"pm.test(\"Verify that successMessage is null\", function () {",
+									"    pm.expect(Response.successMessage).to.eql(null)",
+									"});",
+									"pm.test(\"Verify that ErrorMessage is First name is required\", function () {",
+									"    pm.expect(Response.errorMessage).to.eql(\"First name is required.\")",
+									"});",
+									"pm.test(\"Verify that ResponseCode is 400\", function () {",
+									"    pm.expect(Response.responseCode).to.eql(400)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "4e544011-7dd7-4a65-8b67-15b5e807056f",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "86e72e55-35f4-4cda-9fc8-24efb9b6b869",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerApplicationId\": \"54dab224-59c9-42cd-84d1-c3d6149c1478\",\n  \"loanStatusID\": \"5637A92B-33C4-49B6-AA07-311015E26209\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"\",\n  \"otherCancellationComment\": \"\",\n  \"userId\": \"\",\n  \"customerId\": \"bdb90d8d-3fbc-4a27-950c-c6c0b5848a1e\",\n  \"providerLoanId\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/customers/UpdateLoanStatus"
+					},
+					"response": []
+				},
+				{
+					"name": "update application status - Invalid Customer ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1060dcda-e06d-4567-9210-ef27ff275844",
+								"exec": [
+									" pm.test(\"Verify that Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"Verify that Status code name has Bad Request\", function () {",
+									"    pm.response.to.have.status(\"Bad Request\");",
+									"});",
+									"var Response = pm.response.json()",
+									"pm.test(\"Verify that successMessage is null\", function () {",
+									"    pm.expect(Response.successMessage).to.eql(null)",
+									"});",
+									"pm.test(\"Verify that ErrorMessage is First name is required\", function () {",
+									"    pm.expect(Response.errorMessage).to.eql(\"First name is required.\")",
+									"});",
+									"pm.test(\"Verify that ResponseCode is 400\", function () {",
+									"    pm.expect(Response.responseCode).to.eql(400)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "755a6cd3-dee2-4107-a05a-98f6c773ab39",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "ea8c77fc-5e1a-438f-9f68-987d1d7f36ce",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -6704,7 +6977,70 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"customerApplicationId\": \"54dab224-59c9-42cd-84d1-c3d6149c1478\",\n  \"loanStatusID\": \"5637A92B-33C4-49B6-AA07-311015E26209\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"\",\n  \"otherCancellationComment\": \"\",\n  \"userId\": \"7126f73d-91e6-495a-b00f-d3c0d11c6c5b\",\n  \"customerId\": \"bdb90d8d-3fbc-4a27-950c-c6c0b5848a1e\",\n  \"providerLoanId\": \"\"\n}",
+							"raw": "{\n  \"customerApplicationId\": \"54dab224-59c9-42cd-84d1-c3d6149c1478\",\n  \"loanStatusID\": \"5637A92B-33C4-49B6-AA07-311015E26209\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"\",\n  \"otherCancellationComment\": \"\",\n  \"userId\": \"7126f73d-91e6-495a-b00f-d3c0d11c6c5b\",\n  \"customerId\": \"bdb90d8d-3fbc-4a27-950c-c6c0b5848e\",\n  \"providerLoanId\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/customers/UpdateLoanStatus"
+					},
+					"response": []
+				},
+				{
+					"name": "update application status - No Customer ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bbc1148c-a3bf-41a4-a8b4-a8cb9b66d8d1",
+								"exec": [
+									"pm.test(\"Verify that Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"pm.test(\"Verify that Status code name has Bad Request\", function () {",
+									"    pm.response.to.have.status(\"Bad Request\");",
+									"});",
+									"var Response = pm.response.json()",
+									"pm.test(\"Verify that successMessage is null\", function () {",
+									"    pm.expect(Response.successMessage).to.eql(null)",
+									"});",
+									"pm.test(\"Verify that ErrorMessage is First name is required\", function () {",
+									"    pm.expect(Response.errorMessage).to.eql(\"First name is required.\")",
+									"});",
+									"pm.test(\"Verify that ResponseCode is 400\", function () {",
+									"    pm.expect(Response.responseCode).to.eql(400)",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a46e57f7-36c5-4881-b90f-b4649d13fa1d",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "0511286c-4e01-4523-b42a-848bc651d6c7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerApplicationId\": \"54dab224-59c9-42cd-84d1-c3d6149c1478\",\n  \"loanStatusID\": \"5637A92B-33C4-49B6-AA07-311015E26209\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"\",\n  \"otherCancellationComment\": \"\",\n  \"userId\": \"7126f73d-91e6-495a-b00f-d3c0d11c6c5b\",\n  \"customerId\": \"\",\n  \"providerLoanId\": \"\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
