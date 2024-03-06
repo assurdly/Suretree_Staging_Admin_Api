@@ -6536,7 +6536,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"customerApplicationId\": \"54dab224-59c9-42cd-84d1-c3d6149c1478\",\n  \"loanStatusID\": \"5637A92B-33C4-49B6-AA07-311015E26209\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"OTHERS\",\n  \"otherCancellationComment\": \"This is for test\",\n  \"userId\": \"7126f73d-91e6-495a-b00f-d3c0d11c6c5b\",\n  \"customerId\": \"bdb90d8d-3fbc-4a27-950c-c6c0b5848a1e\",\n  \"providerLoanId\": \"\"\n}",
+							"raw": "{\n  \"customerApplicationId\": \"54dab224-59c9-42cd-84d1-c3d6149c147\",\n  \"loanStatusID\": \"5637A92B-33C4-49B6-AA07-311015E26209\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"OTHERS\",\n  \"otherCancellationComment\": \"This is for test\",\n  \"userId\": \"7126f73d-91e6-495a-b00f-d3c0d11c6c5b\",\n  \"customerId\": \"bdb90d8d-3fbc-4a27-950c-c6c0b5848a1e\",\n  \"providerLoanId\": \"\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -6564,7 +6564,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"customerApplicationId\": \"54dab224-59c9-42cd-84d1-c3d6149c1478\",\n  \"loanStatusID\": \"5637A92B-33C4-49B6-AA07-311015E26209\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"OTHERS\",\n  \"otherCancellationComment\": \"This is for test\",\n  \"userId\": \"7126f73d-91e6-495a-b00f-d3c0d11c6c5b\",\n  \"customerId\": \"bdb90d8d-3fbc-4a27-950c-c6c0b5848a1e\",\n  \"providerLoanId\": \"\"\n}",
+							"raw": "{\n  \"customerApplicationId\": \"\",\n  \"loanStatusID\": \"5637A92B-33C4-49B6-AA07-311015E26209\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"OTHERS\",\n  \"otherCancellationComment\": \"This is for test\",\n  \"userId\": \"7126f73d-91e6-495a-b00f-d3c0d11c6c5b\",\n  \"customerId\": \"bdb90d8d-3fbc-4a27-950c-c6c0b5848a1e\",\n  \"providerLoanId\": \"\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -6592,7 +6592,119 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"customerApplicationId\": \"54dab224-59c9-42cd-84d1-c3d6149c1478\",\n  \"loanStatusID\": \"5637A92B-33C4-49B6-AA07-311015E26209\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"OTHERS\",\n  \"otherCancellationComment\": \"This is for test\",\n  \"userId\": \"7126f73d-91e6-495a-b00f-d3c0d11c6c5b\",\n  \"customerId\": \"bdb90d8d-3fbc-4a27-950c-c6c0b5848a1e\",\n  \"providerLoanId\": \"\"\n}",
+							"raw": "{\n  \"customerApplicationId\": \"54dab224-59c9-42cd-84d1-c3d6149c1478\",\n  \"loanStatusID\": \"5637A92B-33C4-49B6-AA07-311015E262\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"OTHERS\",\n  \"otherCancellationComment\": \"This is for test\",\n  \"userId\": \"7126f73d-91e6-495a-b00f-d3c0d11c6c5b\",\n  \"customerId\": \"bdb90d8d-3fbc-4a27-950c-c6c0b5848a1e\",\n  \"providerLoanId\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/customers/UpdateLoanStatus"
+					},
+					"response": []
+				},
+				{
+					"name": "update application status - No Loan Status ID",
+					"id": "dff5c3e2-c426-4901-a380-4f7814b247cb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerApplicationId\": \"54dab224-59c9-42cd-84d1-c3d6149c1478\",\n  \"loanStatusID\": \"\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"OTHERS\",\n  \"otherCancellationComment\": \"This is for test\",\n  \"userId\": \"7126f73d-91e6-495a-b00f-d3c0d11c6c5b\",\n  \"customerId\": \"bdb90d8d-3fbc-4a27-950c-c6c0b5848a1e\",\n  \"providerLoanId\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/customers/UpdateLoanStatus"
+					},
+					"response": []
+				},
+				{
+					"name": "update application status - No comment",
+					"id": "abbc0f2d-4048-43bb-96bc-67e8dc147a17",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerApplicationId\": \"54dab224-59c9-42cd-84d1-c3d6149c1478\",\n  \"loanStatusID\": \"5637A92B-33C4-49B6-AA07-311015E26209\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"\",\n  \"otherCancellationComment\": \"\",\n  \"userId\": \"7126f73d-91e6-495a-b00f-d3c0d11c6c5b\",\n  \"customerId\": \"bdb90d8d-3fbc-4a27-950c-c6c0b5848a1e\",\n  \"providerLoanId\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/customers/UpdateLoanStatus"
+					},
+					"response": []
+				},
+				{
+					"name": "update application status - Invalid user ID",
+					"id": "3840b874-a114-4326-8e92-3e1d02d897e4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerApplicationId\": \"54dab224-59c9-42cd-84d1-c3d6149c1478\",\n  \"loanStatusID\": \"5637A92B-33C4-49B6-AA07-311015E26209\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"\",\n  \"otherCancellationComment\": \"\",\n  \"userId\": \"7126f73d-91e6-495a-b00f-d3c0d11c6c5b\",\n  \"customerId\": \"bdb90d8d-3fbc-4a27-950c-c6c0b5848a1e\",\n  \"providerLoanId\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/customers/UpdateLoanStatus"
+					},
+					"response": []
+				},
+				{
+					"name": "update application status - Invalid user ID Copy",
+					"id": "ea8c77fc-5e1a-438f-9f68-987d1d7f36ce",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerApplicationId\": \"54dab224-59c9-42cd-84d1-c3d6149c1478\",\n  \"loanStatusID\": \"5637A92B-33C4-49B6-AA07-311015E26209\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"\",\n  \"otherCancellationComment\": \"\",\n  \"userId\": \"7126f73d-91e6-495a-b00f-d3c0d11c6c5b\",\n  \"customerId\": \"bdb90d8d-3fbc-4a27-950c-c6c0b5848a1e\",\n  \"providerLoanId\": \"\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
