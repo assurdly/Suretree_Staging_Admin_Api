@@ -2884,6 +2884,74 @@
 					"response": []
 				},
 				{
+					"name": "single endpoint for application listing pages of Savings, Loan and FD Applications Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6c7c6a91-59e9-4620-8d30-14fe9ede5539",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Your test message\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Success\");\r",
+									"});\r",
+									"pm.test(\"Your test isSuccess\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.isSuccess).to.eql(true);\r",
+									"});\r",
+									"pm.test(\"Your test successMessage\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data.successMessage).to.eql(\"Records retrieved successfully\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Your test errorMessage\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data.errorMessage).to.eql(null);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Your test responseCode\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.data.responseCode).to.eql(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "5c9d4642-d08c-42af-878a-64131c037468",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"productType\": [],\n  \"applicationID\": [],\n  \"providerName\": [],\n  \"productname\": [],\n  \"firstName\": [],\n  \"lastName\": [],\n  \"status\": [\"Pending\",\"Cancelled\",\"Savings Pending\"],\n  \"duration\": [\"3\",\"6\",\"7\"],\n  \"DataSource\":[\"Loan Applications\",\"Customer Savings\",\"Common Applications\"],\n  \"rowsPerPageParam\": 10,\n  \"customerId\": \"\",\n  \"pageNumberParam\": 1,\n  \"dateOfApplication\": \"\",\n  \"startDate\": \"\",\n  \"endDate\": \"\",\n  \"minAmount\":0,\n  \"maxAmount\": 100000000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/v2/Application/list-allcustomer-applications"
+					},
+					"response": []
+				},
+				{
 					"name": "Get-customer-application-details",
 					"event": [
 						{
@@ -6536,7 +6604,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"customerApplicationId\": \"54dab224-59c9-42cd-84d1-c3d6149c147\",\n  \"loanStatusID\": \"5637A92B-33C4-49B6-AA07-311015E26209\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"OTHERS\",\n  \"otherCancellationComment\": \"This is for test\",\n  \"userId\": \"7126f73d-91e6-495a-b00f-d3c0d11c6c5b\",\n  \"customerId\": \"bdb90d8d-3fbc-4a27-950c-c6c0b5848a1e\",\n  \"providerLoanId\": \"\"\n}",
+							"raw": "{\n  \"customerApplicationId\": \"54dab224-59c9-42cd-84d1-c3d6149c147\",\n  \"loanStatusID\": \"5637A92B-33C4-49B6-AA07-311015E26209\",\n  \"loanAmountDisbursed\": 0,\n  \"agreedLoanDuration\": 0,\n  \"agreedLoanInterestRate\": 0,\n  \"loanDisbursementDate\": \"2024-02-07T08:08:10.038Z\",\n  \"comment\": \"OTHERS\",\n  \"otherCancellationComment\": \"This is for test\",\n  \"userId\": \"\",\n  \"customerId\": \"585ec1ac-376d-4283-9cb7-78965b5313ca\",\n  \"providerLoanId\": \"\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
