@@ -1,0 +1,19 @@
+{
+  "productType": [],
+  "applicationID": [],
+  "providerName": [],
+  "productname": [],
+  "firstName": [],
+  "lastName": [],
+  "status": ["Pending","Cancelled","Savings Pending"],
+  "duration": ["3","6","7"],
+  "DataSource":["Loan Applications","Customer Savings","Common Applications"],
+  "rowsPerPageParam": 10,
+  "customerId": "",
+  "pageNumberParam": 1,
+  "dateOfApplication": "",
+  "startDate": "",
+  "endDate": "",
+  "minAmount":0,
+  "maxAmount": 100000000
+}
