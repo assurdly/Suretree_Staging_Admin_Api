@@ -7123,6 +7123,238 @@
 			"id": "1cf0ff9f-bf48-46d1-b382-2d6cbb50f774"
 		},
 		{
+			"name": "Get Savings",
+			"item": [
+				{
+					"name": "Get savings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d822b22e-a681-4762-a420-840ab7106a7b",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Your test successMessage\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.SuccessMessage).to.eql(\"Successful\");",
+									"});",
+									"",
+									"pm.test(\"Your test errorMessage\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.ErrorMessage).to.eql(null);",
+									"});",
+									"",
+									"pm.test(\"Your test responseCode\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.ResponseCode).to.eql(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2614272d-cf2f-46d3-87a2-77cd113a0b9b",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "8ea587d5-9dfb-4af2-810d-c77fb3ae62ba",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/api/savings/getloans"
+					},
+					"response": []
+				}
+			],
+			"id": "b93da73b-f76a-4be8-8eef-fa9610a9886d"
+		},
+		{
+			"name": "Search Savings Products",
+			"item": [
+				{
+					"name": "Search Savings Products",
+					"id": "cb30ac2a-f8fc-4f36-9ef1-6051d6b28ed9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"queryString\": \"Slack\",\n  \"rowsPerPage\": 20,\n  \"pageNumber\":1,\n  \"total\": 0,\n  \"totalPages\": 10,\n  \"searchText\": \"\",\n  \"sortBy\": \"\",\n  \"orderIn\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/products/SearchSavingsProductsForAdmin"
+					},
+					"response": []
+				}
+			],
+			"id": "e65b6002-0a49-4829-aeeb-96d7f95d6faa"
+		},
+		{
+			"name": "Get Saving Product Data via Product ID",
+			"item": [
+				{
+					"name": "Get Saving Product Data via Product ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "575a7faa-dcc7-44b3-a9d9-6316f64e8494",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Your test successMessage\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.successMessage).to.eql(\"Data retrive successfully\");",
+									"});",
+									"",
+									"pm.test(\"Your test errorMessage\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.errorMessage).to.eql(null);",
+									"});",
+									"",
+									"pm.test(\"Your test responseCode\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.responseCode).to.eql(200);",
+									"});",
+									"pm.test(\"details is not empty\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.details).to.not.be.empty;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8d5eb897-9cde-476f-a707-e0f71ae1ff14",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "7658cbda-abfb-4b14-a49b-478b84a25731",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/api/products/GetSavingProductData/d29c0b37-ceac-4839-8bd0-c73561297eac"
+					},
+					"response": []
+				}
+			],
+			"id": "673a5209-d3f3-4513-9afd-2ffddadce8b7"
+		},
+		{
+			"name": "Save Savings Product",
+			"item": [
+				{
+					"name": "Save Savings Product",
+					"id": "2ad6f603-25b8-4b3a-aad7-3afe5cf1dd41",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"02a5bbcb-2f86-48d4-a267-386c631543bb\",\n    \"productName\": \"API Testing leverage244\",\n    \"productDescription\": \"\",\n    \"providerId\": \"a31e838c-888d-41c8-b1f9-279dd68c2db9\",\n    \"providerProductPageUrl\": \"https://google.com\",\n    \"isPublished\": false,\n    \"classOfBusinessId\": \"41753626-c37c-401e-a7d7-1b4e78437a1c\",\n    \"productSeoMetaTagTitle\": null,\n    \"productSeoMetaTagUrlSlug\": null,\n    \"productSeoMetaTagDescription\": null,\n    \"productSeoMetaTagKeywords\": null,\n    \"canTakeApplications\": true,\n    \"applicationSignatureType\": \"Upload Signature\",\n    \"commissionValue\": 0.0,\n    \"isRate\": false,\n    \"interestType\": 235,\n    \"productImages\": null,\n    \"productCategories\": null,\n    \"productRequirements\": null,\n    \"productAttributeDetails\": [\n        {\n            \"productAttributeName\": \"Rates\",\n            \"attributeValue\": \"3\"\n        },\n        {\n            \"productAttributeName\": \"Interest\",\n            \"attributeValue\": \"3\"\n        }\n    ],\n    \"productPanelChargeRateDetails\": null,\n    \"productInterestRateConfigurations\": null\n}\n\n/**\n\n{\n        \"productId\": \"02a5bbcb-2f86-48d4-a267-386c631543bb\",\n        \"productName\": \"API Testing leverage244\",\n        \"productDescription\": \"\",\n        \"providerId\": \"a31e838c-888d-41c8-b1f9-279dd68c2db9\",\n        \"providerProductPageUrl\": \"https://google.com\",\n        \"isPublished\": false,\n        \"classOfBusinessId\": \"41753626-c37c-401e-a7d7-1b4e78437a1c\",\n        \"productSeoMetaTagTitle\": null,\n        \"productSeoMetaTagUrlSlug\": null,\n        \"productSeoMetaTagDescription\": null,\n        \"productSeoMetaTagKeywords\": null,\n        \"canTakeApplications\": null,\n        \"applicationSignatureType\": \"Upload Signature\",\n        \"commissionValue\": 0.0,\n        \"isRate\": false,\n        \"interestType\": 235,\n        \"productImages\": [],\n        \"productCategories\": [],\n        \"productRequirements\": [],\n        \"productAttributeDetails\": [\n            {\n                \"productAttributeName\": \"Rates\",\n                \"attributeValue\": \"3\"\n            },\n            {\n                \"productAttributeName\": \"Interest\",\n                \"attributeValue\": \"2\"\n            }\n        ],\n        \"productPanelChargeRateDetails\": [],\n        \"productInterestRateConfigurations\": [],\n        \"applicationType\": \"onsite\",\n        \"sponsoredProducts\": []\n    }\n    **/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/products/SaveSavingsProduct"
+					},
+					"response": []
+				}
+			],
+			"id": "64968875-538f-47ab-b853-846c01ded88e"
+		},
+		{
+			"name": "Update loan",
+			"id": "06a142c8-b89b-4d12-846a-aebd6f42c70d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{admin_Auth_token}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ProductImages\": [\n        {\n            \"ProductId\": \"d29c0b37-ceac-4839-8bd0-c73561297eac\",\n            \"ProductName\": \"Slack System\",\n            \"ProductDescription\": \"Not really slack\",\n            \"FileSystemId\": \"b08a68cf-4fc7-4c8c-b7ab-28e50e358eaf\",\n            \"FileSystemType\": null,\n            \"FileSystemExtension\": null,\n            \"FileSystemSize\": null,\n            \"FileSystemName\": null,\n            \"FileSystemOwnerId\": null,\n            \"FileSystemSlug\": null,\n            \"DateCreated\": null\n        }\n    ],\n    \"InterestType\": 236,\n    \"ProductTypeName\": null,\n    \"ProductRequirements\": [\n        {\n            \"ProductId\": \"d29c0b37-ceac-4839-8bd0-c73561297eac\",\n            \"RequirementId\": \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\",\n            \"RequirementTitle\": \"International Passport\",\n            \"RequirementDescription\": \"This is your valid international passport\",\n            \"ProductRequirementId\": \"5d961c1b-6210-430f-b314-bb98f2470741\",\n            \"ProductName\": \"Slack System\"\n        },\n        {\n            \"ProductId\": \"d29c0b37-ceac-4839-8bd0-c73561297eac\",\n            \"RequirementId\": \"0BX19-278U0-BPU6M-K232L-I3WA1-0CP1Y\",\n            \"RequirementTitle\": \"Bank Account\",\n            \"RequirementDescription\": null,\n            \"ProductRequirementId\": \"becc3613-977a-49ad-9e7e-8fafdeaef851\",\n            \"ProductName\": \"Slack System\"\n        }\n    ],\n    \"ProductCategories\": [\n        {\n            \"ProductId\": \"d29c0b37-ceac-4839-8bd0-c73561297eac\",\n            \"ProductName\": \"Slack System\",\n            \"ProductCategoryId\": \"6973f353-b065-4d28-b6b5-35f66d4711e9\",\n            \"CategoryId\": \"082d28f7-0f23-4336-9bf8-2508a2674d02\",\n            \"CategoryName\": \"Quick Loans\",\n            \"CategoryDescription\": \"Get same day payment when you apply for quick loans online from select providers in Nigeria.\",\n            \"CategoryUrlSlug\": \"quick-loans\",\n            \"ParentCategoryName\": \"Personal Loans\",\n            \"ParentCategoryUrlSlug\": \"loans\"\n        },\n        {\n            \"ProductId\": \"d29c0b37-ceac-4839-8bd0-c73561297eac\",\n            \"ProductName\": \"Slack System\",\n            \"ProductCategoryId\": \"eb904600-9caf-4290-a40b-cbdf9e4f562a\",\n            \"CategoryId\": \"2fde931f-bfcd-4427-9fed-ad843270f1d2\",\n            \"CategoryName\": \"Payday Loans\",\n            \"CategoryDescription\": \"Quick payday loans, no hidden fees or charges, 100% online. Apply quickly and get fast loan decision online\",\n            \"CategoryUrlSlug\": \"payday-loans\",\n            \"ParentCategoryName\": \"Personal Loans\",\n            \"ParentCategoryUrlSlug\": \"loans\"\n        },\n        {\n            \"ProductId\": \"d29c0b37-ceac-4839-8bd0-c73561297eac\",\n            \"ProductName\": \"Slack System\",\n            \"ProductCategoryId\": \"8a55e96d-d30a-44f0-bb6a-d5031ea8c588\",\n            \"CategoryId\": \"44981E1D-CF61-40D4-8FC4-DC55EC6BEF70\",\n            \"CategoryName\": \"SME Business Loans\",\n            \"CategoryDescription\": \"SME Business Loans description\",\n            \"CategoryUrlSlug\": \"sme-business-loans\",\n            \"ParentCategoryName\": \"Business Loans\",\n            \"ParentCategoryUrlSlug\": \"business-loans\"\n        },\n        {\n            \"ProductId\": \"d29c0b37-ceac-4839-8bd0-c73561297eac\",\n            \"ProductName\": \"Slack System\",\n            \"ProductCategoryId\": \"3b23661e-82a7-43f3-967c-29cceba3accf\",\n            \"CategoryId\": \"701C71A6-FFED-49C2-9DE0-2FE125C14E45\",\n            \"CategoryName\": \"Sole Trader Business Loans\",\n            \"CategoryDescription\": \"Sole Trader Business Loans description\",\n            \"CategoryUrlSlug\": \"sole-trader-business-loans\",\n            \"ParentCategoryName\": \"Business Loans\",\n            \"ParentCategoryUrlSlug\": \"business-loans\"\n        },\n        {\n            \"ProductId\": \"d29c0b37-ceac-4839-8bd0-c73561297eac\",\n            \"ProductName\": \"Slack System\",\n            \"ProductCategoryId\": \"7d1f3613-09e6-4bff-9c6b-e8e4906b59c4\",\n            \"CategoryId\": \"746cb516-69e8-4c30-9912-694674241d4f\",\n            \"CategoryName\": \"Consumer Loans\",\n            \"CategoryDescription\": \"Find low-interest personal loans without collateral\",\n            \"CategoryUrlSlug\": \"consumer-loans\",\n            \"ParentCategoryName\": \"Personal Loans\",\n            \"ParentCategoryUrlSlug\": \"loans\"\n        }\n    ],\n    \"ProductId\": \"d29c0b37-ceac-4839-8bd0-c73561297eac\",\n    \"ProductDescription\": \"Not really slack\",\n    \"DateCreated\": \"2024-02-06T10:21:33.637\",\n    \"DateLastModified\": \"AAAAAAABj4I=\",\n    \"ProviderId\": \"fef05476-4d39-4ed7-938c-97e0fa5eb5f1\",\n    \"ProviderName\": \"EmmsDan Testing\",\n    \"ProviderDescription\": \"<p><br></p><p><br></p><h4>Console</h4><p>Getting Started</p><p>Dashboard</p><p>nairaCompare.ng</p><h5>PRODUCT</h5><p>Products</p><p>Providers</p><h5>CUSTOMER MANAGEMENT</h5><p>Cust. Relationship Mgr</p><p>Applications</p><p>Campaigns</p><p>Newsletter Subscriptions</p><h5>FINANCE</h5><p>Invoice</p><p>Archived Invoice</p><p>Receipt</p><p>Archived Receipt</p><p>Account Details Configuration</p><h5>CONTENT STUDIO</h5><p>Content Manager</p><p>Media Gallery</p><h5>SETTINGS &amp; MORE</h5><p>User Management</p><p>Settings</p><h5>REPORTS</h5><p>Transactions</p><p>Site Traffic &amp; Analysis</p><p>Appraisal Report</p><p>Credit History Report</p><p>Search History</p><h4>Providers</h4><p><br></p><p><br></p><p>Boluwatife Olatunde</p><ul><li><a href=\\\"https://nc-admin-staging.suretree.com/#loans-product\\\" rel=\\\"noopener noreferrer\\\" target=\\\"_blank\\\">Providers</a></li></ul><p><br></p><p><br></p><p>PROVIDER NAME - EMAILPROVIDER IDDATENUMBER OF PRODUCT</p><p>L</p><p>Letshego Microfinance Bank Nigeria Ltd</p><p>nnamdi.nwangbo@suretree.com</p><p><br></p><p>FP-0086</p><p>Jan 12, 2023</p><p><br></p><p>8 products</p><p>Page 1 of 1 from 1 records</p><p>1</p><h5>×</h5><ul><li><a href=\\\"https://nc-admin-staging.suretree.com/#about-loan-provider\\\" rel=\\\"noopener noreferrer\\\" target=\\\"_blank\\\">Details</a></li><li><a href=\\\"https://nc-admin-staging.suretree.com/#loan-Provider-seo\\\" rel=\\\"noopener noreferrer\\\" target=\\\"_blank\\\">SEO Settings</a></li><li><a href=\\\"https://nc-admin-staging.suretree.com/#loan-Provider-invoice-contact\\\" rel=\\\"noopener noreferrer\\\" target=\\\"_blank\\\">Billing Contact Details</a></li><li><a href=\\\"https://nc-admin-staging.suretree.com/#loan-Provider-account-officer\\\" rel=\\\"noopener noreferrer\\\" target=\\\"_blank\\\">Internal Account Officer</a></li></ul><h5><br></h5><h5>Provider Name:*</h5><h5><br></h5><h5>The provider name is the official name of the company. It should be the same as the name on the company's registration documents.</h5><h5>Description:*</h5><h5><br></h5><h5><br></h5><h5><br></h5><h5><br></h5><h5><br></h5><h5><br></h5><h5><br></h5><h5><br></h5><h5><br></h5><h5><br></h5><h5><br></h5><h5>Contact Address:*</h5><h5><br></h5><h5>Google Map:</h5><h5><br></h5><h5>Phone Number:*</h5><h5>&nbsp;+234</h5><h5>Website:*</h5><h5><br></h5><h5>Email Address:*</h5><h5><br></h5><h5>Invoice Frequency:</h5><h5>&nbsp;Daily&nbsp;</h5><h5>&nbsp;Weekly&nbsp;</h5><h5>&nbsp;Monthly&nbsp;</h5><h5>&nbsp;Quarterly&nbsp;</h5><h5>Is receive invoice email notification</h5><h5>Can take application</h5><h5>Can share loan applicant's contact details</h5><h5>Provider receives application notification?</h5><h5>Cancel</h5><h5>Save changes</h5><h5><br></h5><h5><br></h5>\",\n    \"ProviderEmail\": \"emmsdan12@yopmail.com\",\n    \"ProviderAddress\": \"here\",\n    \"ProviderPhone\": \"0987654321\",\n    \"ProviderWebsite\": \"yopmail.com\",\n    \"ProductName\": \"Slack System\",\n    \"ProductLoanId\": \"df340c51-1667-46ce-a333-acd9a5d22b90\",\n    \"MaxDuration\": 12,\n    \"MinDuration\": 1,\n    \"Rate\": 1,\n    \"MaxAmount\": 2000000000,\n    \"MinAmount\": 2000,\n    \"MaxAge\": 222,\n    \"MinAge\": 1,\n    \"IsAnnualRateType\": true,\n    \"IsFixedRepayment\": true,\n    \"IsPublished\": true,\n    \"ProviderProductPageUrl\": \"emmsdan.com\",\n    \"ClassOfBusinessId\": \"00f80de2-6f97-4cdc-9a95-e3f6a79f6850\",\n    \"ClassOfBusinessTitle\": null,\n    \"ClassOfBusinessDescription\": null,\n    \"FileSystemId\": \"b08a68cf-4fc7-4c8c-b7ab-28e50e358eaf\",\n    \"ProductSeoMetaTagTitle\": \"EmmsDan Testing - Slack System\",\n    \"ProductSeoMetaTagUrlSlug\": \"emmsdan-testing-slack-system\",\n    \"ProductSeoMetaTagDescription\": \"not really slack\",\n    \"ProductSeoMetaTagKeywords\": null,\n    \"ProviderSeoMetaTagTitle\": \"EmmsDan Testing\",\n    \"ProviderSeoMetaTagUrlSlug\": \"emmsdan-testing\",\n    \"ProviderSeoMetaTagDescription\": \"<p><br></p><p><br></p><h4>console</h4><p>getting started</p><p>dashboard</p><p>nairacompare.ng</p><h5>product</h5><p>products</p><p>providers</p><h5>customer management</h5><p>cust. relationship mgr</p><p>applications</p><p>campaigns</p><p>newsletter subscriptions</p><h5>finance</h5><p>invoice</p><p>archived invoice</p><p>receipt</p><p>archived receipt</p><p>account details configuration</p><h5>content studio</h5><p>content manager</p><p>media gallery</p><h5>settings & more</h5><p>user management</p><p>settings</p><h5>reports</h5><p>transactions</p><p>site traffic & analysis</p><p>appraisal report</p><p>credit history report</p><p>search history</p><h4>providers</h4><p><br></p><p><br></p><p>boluwatife olatunde</p><ul><li><a href=\\\"https://nc-admin-staging.suretree.com/#loans-product\\\" rel=\\\"noopener noreferrer\\\" target=\\\"_blank\\\">providers</a></li></ul><p><br></p><p><br></p><p>provider name - emailprovider iddatenumber of product</p><p>l</p><p>letshego microfinance bank nigeria ltd</p><p>nnamdi.nwangbo@suretree.com</p><p><br></p><p>fp-0086</p><p>jan 12, 2023</p><p><br></p><p>8 products</p><p>page 1 of 1 from 1 records</p><p>1</p><h5><new provider</h5><p>×</p><ul><li><a href=\\\"https://nc-admin-staging.suretree.com/#about-loan-provider\\\" rel=\\\"noopener noreferrer\\\" target=\\\"_blank\\\">details</a></li><li><a href=\\\"https://nc-admin-staging.suretree.com/#loan-provider-seo\\\" rel=\\\"noopener noreferrer\\\" target=\\\"_blank\\\">seo settings</a></li><li><a href=\\\"https://nc-admin-staging.suretree.com/#loan-provider-invoice-contact\\\" rel=\\\"noopener noreferrer\\\" target=\\\"_blank\\\">billing contact details</a></li><li><a href=\\\"https://nc-admin-staging.suretree.com/#loan-provider-account-officer\\\" rel=\\\"noopener noreferrer\\\" target=\\\"_blank\\\">internal account officer</a></li></ul><p><br></p><p>provider name:*</p><p><br></p><p>the provider name is the official name of the company. it should be the same as the name on the company's registration documents.</p><p>description:*</p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p><p>contact address:*</p><p><br></p><p>google map:</p><p><br></p><p>phone number:*</p><p> +234</p><p>website:*</p><p><br></p><p>email address:*</p><p><br></p><p>invoice frequency:</p><p> daily </p><p> weekly </p><p> monthly </p><p> quarterly </p><p>is receive invoice email notification</p><p>can take application</p><p>can share loan applicant's contact details</p><p>provider receives application notification?</p><p>cancel</p><p>save changes</p><p><br></p><p><br></p>\",\n    \"ProviderSeoMetaTagKeywords\": \"\",\n    \"ProviderFileSystemId\": null,\n    \"IsProviderPublished\": true,\n    \"IsProviderBlacklisted\": false,\n    \"AverageCustomerRating\": null,\n    \"ProcessingTime\": 1,\n    \"ProviderAddressMap\": null,\n    \"NumberOfIncomeEarned\": 100000,\n    \"NumberOfExpenditureIncurred\": 30000,\n    \"ContentId\": null,\n    \"ContentTitle\": null,\n    \"ContentDescription\": null,\n    \"ContentBody\": null,\n    \"CommissionValue\": 9,\n    \"IsRate\": true,\n    \"CanTakeApplications\": true,\n    \"ProviderCanTakeApplications\": true,\n    \"ApplicationSignatureType\": \"Confirmation Checkbox\",\n    \"ApplicationType\": \"onsite\",\n    \"ManagementFee\": null,\n    \"sponsoredProducts\": []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://nc-console-staging.suretree.com/api/products/update-loan-product"
+			},
+			"response": []
+		},
+		{
 			"name": "clear cache",
 			"id": "b0ebd0bd-68b4-4359-9e32-c293d6396bec",
 			"protocolProfileBehavior": {
