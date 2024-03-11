@@ -7411,6 +7411,46 @@
 		},
 		{
 			"name": "Update loan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c9af8e51-456b-43ce-a1ae-8649112ded6c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});",
+							"pm.test(\"Your test successMessage\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.SuccessMessage).to.eql(\"Successfully updated\");",
+							"});",
+							"",
+							"pm.test(\"Your test errorMessage\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.ErrorMessage).to.eql(null);",
+							"});",
+							"",
+							"pm.test(\"Your test responseCode\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.ResponseCode).to.eql(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d0d4cb8e-1b6c-4970-b975-b76adfae96d6",
+						"exec": [],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "06a142c8-b89b-4d12-846a-aebd6f42c70d",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
