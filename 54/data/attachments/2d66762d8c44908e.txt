@@ -1,0 +1,15 @@
+var resp = JSON.parse(responseBody)
+
+pm.test("Verify that Status code is 500", function () {
+    pm.response.to.have.status(500);
+});
+
+pm.test("Verify that error message is 'The server was unable to process your request'", function () {
+    pm.expect(resp.data).to.eql("The server was unable to process your request");
+});
+pm.test("isSuccess returns false'", function () {
+    pm.expect(resp.isSuccess).to.eql(false);
+});
+pm.test("message returns Failed'", function () {
+    pm.expect(resp.message).to.eql("Failed");
+});

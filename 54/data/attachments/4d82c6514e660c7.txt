@@ -1,0 +1,43 @@
+{
+    "productId": "d29c0b37-ceac-4839-8bd0-c73561297eac",
+    "productName": "Slack System",
+    "productDescription": "Not Really Slack",
+    "providerId": "fef05476-4d39-4ed7-938c-97e0fa5eb5f1",
+    "providerProductPageUrl": "emmsdan.com",
+    "isPublished": false,
+    "classOfBusinessId": "00f80de2-6f97-4cdc-9a95-e3f6a79f6850",
+    "productSeoMetaTagTitle": "EmmsDan Testing - Slack System",
+    "productSeoMetaTagUrlSlug": "emmsdan-testing-slack-system",
+    "productSeoMetaTagDescription": "not really slack",
+    "productSeoMetaTagKeywords": null,
+    "canTakeApplications": true,
+    "applicationSignatureType": "Confirmation Checkbox",
+    "commissionValue": 9.0,
+    "isRate": true,
+    "interestType": 235,
+    "productImages": null,
+    "productCategories":  [
+            "082d28f7-0f23-4336-9bf8-2508a2674d02",
+            "44981E1D-CF61-40D4-8FC4-DC55EC6BEF70",
+            "746cb516-69e8-4c30-9912-694674241d4f",
+            "701C71A6-FFED-49C2-9DE0-2FE125C14E45",
+            "2fde931f-bfcd-4427-9fed-ad843270f1d2"
+        ],
+    "productRequirements": [
+            "0BX19-278U0-BPU6M-K232L-I3WA1-0CP1Y",
+            "S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT"
+        ],
+    "productAttributeDetails": [
+        {
+            "productAttributeName": "Rates",
+            "attributeValue": "3"
+        },
+        {
+            "productAttributeName": "Interest",
+            "attributeValue": "3"
+        }
+    ],
+    "productPanelChargeRateDetails":[],
+    "productInterestRateConfigurations": []
+}
+
