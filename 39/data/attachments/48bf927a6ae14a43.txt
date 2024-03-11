@@ -1,6 +1,0 @@
-{
-     "organizationAccountDetailId":"d404c7e4-9d79-4d73-84d4-00e4716a036b",
-     "accountNumber":"9163409866",
-     "accountName":"damilola oyesina",
-     "bankId":"b0d7e4af-23d3-4362-b67b-1d5802ac131e"
-}

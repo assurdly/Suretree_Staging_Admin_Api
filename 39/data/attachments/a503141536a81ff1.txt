@@ -1,5 +1,0 @@
-{
-   "ExpireInDays": 30,
-   "ProductId" : "",
-   "CategoryID": "e068aadf-2116-41c3-9655-567a0e2bdd46"
-}

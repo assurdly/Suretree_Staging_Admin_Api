@@ -1,6 +1,0 @@
-pm.test("Status code is 404", function () {
-    pm.response.to.have.status(404);
-});
-pm.test("Status code name should be 'Not Found'", function () {
-    pm.response.to.have.status("Not Found");
-});

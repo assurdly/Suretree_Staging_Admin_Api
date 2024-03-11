@@ -1,1 +1,0 @@
-{"isSuccess":true,"message":"Account Details Configuration is Updated","data":true,"errors":null,"statusCode":200}

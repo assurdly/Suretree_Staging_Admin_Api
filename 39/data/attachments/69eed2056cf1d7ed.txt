@@ -1,5 +1,0 @@
-{
-    "Email": "tester.account@suretree.com",
-    "Password": "",
-    "UniqueIDFromFrontEnd": "c732386c2e6a8a8b13c-2fa83c954421dd6fb94-7ee90de95a0c4a92f49-48427e2a6aca38b1d5-043d4c1cf40a67107"
-}
