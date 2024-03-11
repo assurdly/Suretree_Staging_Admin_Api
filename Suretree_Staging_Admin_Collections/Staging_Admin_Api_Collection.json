@@ -7209,7 +7209,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"queryString\": \"Slack\",\n  \"rowsPerPage\": 20,\n  \"pageNumber\":1,\n  \"total\": 0,\n  \"totalPages\": 10,\n  \"searchText\": \"\",\n  \"sortBy\": \"\",\n  \"orderIn\": \"\"\n}",
+							"raw": "{\n  \"queryString\": \"Slack\",\n  \"rowsPerPage\": 20,\n  \"pageNumber\":1,\n  \"total\": 0,\n  \"totalPages\": 10,\n  \"searchText\": \"\",\n  \"sortBy\": \"DateCreate\",\n  \"orderIn\": \"DESC\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
