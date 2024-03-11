@@ -1,0 +1,16 @@
+pm.test("Verify that Status code is 400", function () {
+    pm.response.to.have.status(400);
+});
+pm.test("Verify that Status code name has Bad Request", function () {
+    pm.response.to.have.status("Bad Request");
+});
+var Response = pm.response.json()
+pm.test("Verify that successMessage is null", function () {
+    pm.expect(Response.successMessage).to.eql(null)
+});
+pm.test("Verify that ErrorMessage is First name is required", function () {
+    pm.expect(Response.errorMessage).to.eql("First name is required.")
+});
+pm.test("Verify that ResponseCode is 400", function () {
+    pm.expect(Response.responseCode).to.eql(400)
+});

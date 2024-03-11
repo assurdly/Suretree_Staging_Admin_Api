@@ -1,0 +1,14 @@
+{
+    "Date": "Mon, 11 Mar 2024 18:28:19 GMT",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "strict-transport-security": "max-age=2592000",
+    "www-authenticate": "Bearer error=\"invalid_token\"",
+    "x-powered-by": "ASP.NET",
+    "CF-Cache-Status": "DYNAMIC",
+    "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=wGFBiqs4J8k05MQ4yDBgShZKFqSkgYUT6YTO7NNlO1xiXL1DqA9jBV6mxK3Y6oA8O5VKL86slM80abP5kzBdUKYKASpVPxJscEztDdhrJAwfmsqD5KUsu5JZgo9HD6EsWNiSgor6gjLbN93XQ8FmoXap\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+    "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+    "Server": "cloudflare",
+    "CF-RAY": "862d9a832dcf7afd-SJC",
+    "alt-svc": "h3=\":443\"; ma=86400"
+}
