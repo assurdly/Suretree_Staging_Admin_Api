@@ -1,0 +1,1 @@
+{"isSuccess":false,"message":null,"data":false,"errors":["Bank () details was not found!"],"statusCode":400}

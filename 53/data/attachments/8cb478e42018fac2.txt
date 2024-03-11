@@ -1,0 +1,34 @@
+{
+    "productId": "02a5bbcb-2f86-48d4-a267-386c631543bb",
+    "productName": "API Testing leverage244",
+    "productDescription": "",
+    "providerId": "a31e838c-888d-41c8-b1f9-279dd68c2db9",
+    "providerProductPageUrl": "https://google.com",
+    "isPublished": false,
+    "classOfBusinessId": "41753626-c37c-401e-a7d7-1b4e78437a1c",
+    "productSeoMetaTagTitle": null,
+    "productSeoMetaTagUrlSlug": null,
+    "productSeoMetaTagDescription": null,
+    "productSeoMetaTagKeywords": null,
+    "canTakeApplications": true,
+    "applicationSignatureType": "Upload Signature",
+    "commissionValue": 0.0,
+    "isRate": false,
+    "interestType": 235,
+    "productImages": null,
+    "productCategories": null,
+    "productRequirements": null,
+    "productAttributeDetails": [
+        {
+            "productAttributeName": "Rates",
+            "attributeValue": "3"
+        },
+        {
+            "productAttributeName": "Interest",
+            "attributeValue": "3"
+        }
+    ],
+    "productPanelChargeRateDetails": null,
+    "productInterestRateConfigurations": null
+}
+
