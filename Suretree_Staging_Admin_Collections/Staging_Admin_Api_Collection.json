@@ -7194,6 +7194,46 @@
 			"item": [
 				{
 					"name": "Search Savings Products",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d41004c6-828e-4ee0-91a2-6012600b22d2",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Your test successMessage\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.successMessage).to.eql(null);",
+									"});",
+									"",
+									"pm.test(\"Your test errorMessage\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.ErrorMessage).to.eql(null);",
+									"});",
+									"",
+									"pm.test(\"Your test responseCode\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.ResponseCode).to.eql(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "96699146-f3d7-400c-b2de-dad915a0685c",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "cb30ac2a-f8fc-4f36-9ef1-6051d6b28ed9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -7217,6 +7257,67 @@
 							}
 						},
 						"url": "{{baseUrl}}/api/products/SearchSavingsProductsForAdmin"
+					},
+					"response": []
+				},
+				{
+					"name": "Get savings Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d822b22e-a681-4762-a420-840ab7106a7b",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Your test successMessage\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.SuccessMessage).to.eql(\"Successful\");",
+									"});",
+									"",
+									"pm.test(\"Your test errorMessage\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.ErrorMessage).to.eql(null);",
+									"});",
+									"",
+									"pm.test(\"Your test responseCode\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.ResponseCode).to.eql(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2614272d-cf2f-46d3-87a2-77cd113a0b9b",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f306849a-c599-4ef0-80fe-010bfccd5139",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{admin_Auth_token_Live}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/api/savings/getloans"
 					},
 					"response": []
 				}
