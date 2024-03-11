@@ -1,1 +1,0 @@
-{"isSuccess":true,"message":"Account number resolved","data":{"accountNumber":"2190800022","accountName":"DAMILOLA   OYESINA"},"errors":null,"statusCode":200}

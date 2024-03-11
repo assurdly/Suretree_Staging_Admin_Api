@@ -1,5 +1,0 @@
-{
-   "ExpireInDays": "",
-   "ProductId" : "",
-   "CategoryID": ""
-}

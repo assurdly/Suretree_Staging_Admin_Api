@@ -1,1 +1,0 @@
-{"isSuccess":false,"message":null,"data":false,"errors":["Bank (b0d7e4af-23d3-4362-b67b-1d5802ac131e44) details was not found!"],"statusCode":400}

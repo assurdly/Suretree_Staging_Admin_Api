@@ -1,4 +1,0 @@
-{
-    "SponsoredProductId" : "[object Object]", 
-    "ExpireInDays": 627
-}
