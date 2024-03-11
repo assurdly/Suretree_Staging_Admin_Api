@@ -7214,12 +7214,15 @@
 									"",
 									"pm.test(\"Your test errorMessage\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.ErrorMessage).to.eql(null);",
+									"    pm.expect(jsonData.errorMessage).to.eql(null);",
 									"});",
-									"",
 									"pm.test(\"Your test responseCode\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.ResponseCode).to.eql(200);",
+									"    pm.expect(jsonData.responseCode).to.eql(200);",
+									"});",
+									"pm.test(\"details is not empty\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.details).to.not.be.empty;",
 									"});"
 								],
 								"type": "text/javascript"
@@ -7228,7 +7231,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "96699146-f3d7-400c-b2de-dad915a0685c",
+								"id": "344ac487-5bad-498d-bae9-ce18f559a597",
 								"exec": [],
 								"type": "text/javascript"
 							}
@@ -7257,67 +7260,6 @@
 							}
 						},
 						"url": "{{baseUrl}}/api/products/SearchSavingsProductsForAdmin"
-					},
-					"response": []
-				},
-				{
-					"name": "Get savings Copy",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "d822b22e-a681-4762-a420-840ab7106a7b",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"Status code name has string\", function () {",
-									"    pm.response.to.have.status(\"OK\");",
-									"});",
-									"pm.test(\"Your test successMessage\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.SuccessMessage).to.eql(\"Successful\");",
-									"});",
-									"",
-									"pm.test(\"Your test errorMessage\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.ErrorMessage).to.eql(null);",
-									"});",
-									"",
-									"pm.test(\"Your test responseCode\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.ResponseCode).to.eql(200);",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "2614272d-cf2f-46d3-87a2-77cd113a0b9b",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "f306849a-c599-4ef0-80fe-010bfccd5139",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{admin_Auth_token_Live}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{baseUrl}}/api/savings/getloans"
 					},
 					"response": []
 				}
@@ -7398,6 +7340,46 @@
 			"item": [
 				{
 					"name": "Save Savings Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2600bfd7-6c53-44a0-ae10-ea6f3e33580c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Your test successMessage\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.successMessage).to.eql(\"Data saved successfully\");",
+									"});",
+									"",
+									"pm.test(\"Your test errorMessage\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.errorMessage).to.eql(null);",
+									"});",
+									"pm.test(\"Your test responseCode\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.responseCode).to.eql(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "878dfbb2-b042-4fc8-995c-54015d3fbdd4",
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "2ad6f603-25b8-4b3a-aad7-3afe5cf1dd41",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -7413,7 +7395,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"productId\": \"d29c0b37-ceac-4839-8bd0-c73561297eac\",\n    \"productName\": \"Slack System\",\n    \"productDescription\": \"Not Really Slack\",\n    \"providerId\": \"fef05476-4d39-4ed7-938c-97e0fa5eb5f1\",\n    \"providerProductPageUrl\": \"emmsdan.com\",\n    \"isPublished\": false,\n    \"classOfBusinessId\": \"00f80de2-6f97-4cdc-9a95-e3f6a79f6850\",\n    \"productSeoMetaTagTitle\": \"EmmsDan Testing - Slack System\",\n    \"productSeoMetaTagUrlSlug\": \"emmsdan-testing-slack-system\",\n    \"productSeoMetaTagDescription\": \"not really slack\",\n    \"productSeoMetaTagKeywords\":\"slack\",\n    \"canTakeApplications\": true,\n    \"applicationSignatureType\": \"Confirmation Checkbox\",\n    \"commissionValue\": 9.0,\n    \"isRate\": true,\n    \"interestType\": 235,\n    \"productImages\": [\n        {\n            \"fileSystemId\": \"b08a68cf-4fc7-4c8c-b7ab-28e50e358eaf\"\n        }\n    ],\n    \"productCategories\":  [\n            \"082d28f7-0f23-4336-9bf8-2508a2674d02\",\n            \"44981E1D-CF61-40D4-8FC4-DC55EC6BEF70\",\n            \"746cb516-69e8-4c30-9912-694674241d4f\",\n            \"701C71A6-FFED-49C2-9DE0-2FE125C14E45\",\n            \"2fde931f-bfcd-4427-9fed-ad843270f1d2\"\n        ],\n    \"productRequirements\": [\n            \"0BX19-278U0-BPU6M-K232L-I3WA1-0CP1Y\",\n            \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\"\n        ],\n    \"productAttributeDetails\": [\n        {\n            \"productAttributeName\": \"Rates\",\n            \"attributeValue\": \"3\"\n        },\n        {\n            \"productAttributeName\": \"Interest\",\n            \"attributeValue\": \"3\"\n        }\n    ],\n    \"productPanelChargeRateDetails\":[],\n    \"productInterestRateConfigurations\": []\n}\n\n/**\n\n{\n        \"productId\": \"02a5bbcb-2f86-48d4-a267-386c631543bb\",\n        \"productName\": \"API Testing leverage244\",\n        \"productDescription\": \"\",\n        \"providerId\": \"a31e838c-888d-41c8-b1f9-279dd68c2db9\",\n        \"providerProductPageUrl\": \"https://google.com\",\n        \"isPublished\": false,\n        \"classOfBusinessId\": \"41753626-c37c-401e-a7d7-1b4e78437a1c\",\n        \"productSeoMetaTagTitle\": null,\n        \"productSeoMetaTagUrlSlug\": null,\n        \"productSeoMetaTagDescription\": null,\n        \"productSeoMetaTagKeywords\": null,\n        \"canTakeApplications\": null,\n        \"applicationSignatureType\": \"Upload Signature\",\n        \"commissionValue\": 0.0,\n        \"isRate\": false,\n        \"interestType\": 235,\n        \"productImages\": [],\n        \"productCategories\": [],\n        \"productRequirements\": [],\n        \"productAttributeDetails\": [\n            {\n                \"productAttributeName\": \"Rates\",\n                \"attributeValue\": \"3\"\n            },\n            {\n                \"productAttributeName\": \"Interest\",\n                \"attributeValue\": \"2\"\n            }\n        ],\n        \"productPanelChargeRateDetails\": [],\n        \"productInterestRateConfigurations\": [],\n        \"applicationType\": \"onsite\",\n        \"sponsoredProducts\": []\n    }\n    **/",
+							"raw": "{\n    \"productId\": \"d29c0b37-ceac-4839-8bd0-c73561297eac\",\n    \"productName\": \"Slack System\",\n    \"productDescription\": \"Not Really Slack\",\n    \"providerId\": \"fef05476-4d39-4ed7-938c-97e0fa5eb5f1\",\n    \"providerProductPageUrl\": \"emmsdan.com\",\n    \"isPublished\": false,\n    \"classOfBusinessId\": \"00f80de2-6f97-4cdc-9a95-e3f6a79f6850\",\n    \"productSeoMetaTagTitle\": \"EmmsDan Testing - Slack System\",\n    \"productSeoMetaTagUrlSlug\": \"emmsdan-testing-slack-system\",\n    \"productSeoMetaTagDescription\": \"not really slack\",\n    \"productSeoMetaTagKeywords\":\"slack\",\n    \"canTakeApplications\": true,\n    \"applicationSignatureType\": \"Confirmation Checkbox\",\n    \"commissionValue\": 9.0,\n    \"isRate\": true,\n    \"interestType\": 235,\n    \"productImages\": [\n        {\n            \"fileSystemId\": \"b08a68cf-4fc7-4c8c-b7ab-28e50e358eaf\"\n        }\n    ],\n    \"productCategories\":  [\n            \"082d28f7-0f23-4336-9bf8-2508a2674d02\",\n            \"44981E1D-CF61-40D4-8FC4-DC55EC6BEF70\",\n            \"746cb516-69e8-4c30-9912-694674241d4f\",\n            \"701C71A6-FFED-49C2-9DE0-2FE125C14E45\",\n            \"2fde931f-bfcd-4427-9fed-ad843270f1d2\"\n        ],\n    \"productRequirements\": [\n            \"0BX19-278U0-BPU6M-K232L-I3WA1-0CP1Y\",\n            \"S414T-2F8SC-8U2W1-M8G5A-6XV10-1QTIT\"\n        ],\n    \"productAttributeDetails\": [\n        {\n            \"productAttributeName\": \"Rates\",\n            \"attributeValue\": \"3\"\n        },\n        {\n            \"productAttributeName\": \"Interest\",\n            \"attributeValue\": \"3\"\n        }\n    ],\n    \"productPanelChargeRateDetails\":[],\n    \"productInterestRateConfigurations\": [],\n    \"applicationType\": \"onsite\",\n    \"sponsoredProducts\": []\n}\n\n/**\n\n{\n        \"productId\": \"02a5bbcb-2f86-48d4-a267-386c631543bb\",\n        \"productName\": \"API Testing leverage244\",\n        \"productDescription\": \"\",\n        \"providerId\": \"a31e838c-888d-41c8-b1f9-279dd68c2db9\",\n        \"providerProductPageUrl\": \"https://google.com\",\n        \"isPublished\": false,\n        \"classOfBusinessId\": \"41753626-c37c-401e-a7d7-1b4e78437a1c\",\n        \"productSeoMetaTagTitle\": null,\n        \"productSeoMetaTagUrlSlug\": null,\n        \"productSeoMetaTagDescription\": null,\n        \"productSeoMetaTagKeywords\": null,\n        \"canTakeApplications\": null,\n        \"applicationSignatureType\": \"Upload Signature\",\n        \"commissionValue\": 0.0,\n        \"isRate\": false,\n        \"interestType\": 235,\n        \"productImages\": [],\n        \"productCategories\": [],\n        \"productRequirements\": [],\n        \"productAttributeDetails\": [\n            {\n                \"productAttributeName\": \"Rates\",\n                \"attributeValue\": \"3\"\n            },\n            {\n                \"productAttributeName\": \"Interest\",\n                \"attributeValue\": \"2\"\n            }\n        ],\n        \"productPanelChargeRateDetails\": [],\n        \"productInterestRateConfigurations\": [],\n        \"applicationType\": \"onsite\",\n        \"sponsoredProducts\": []\n    }\n    **/",
 							"options": {
 								"raw": {
 									"language": "json"
