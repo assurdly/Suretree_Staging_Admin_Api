@@ -1,0 +1,24 @@
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Status code name has string", function () {
+    pm.response.to.have.status("OK");
+});
+pm.test("Your test successMessage", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.successMessage).to.eql(null);
+});
+
+pm.test("Your test errorMessage", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.errorMessage).to.eql(null);
+});
+pm.test("Your test responseCode", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.responseCode).to.eql(200);
+});
+pm.test("details is not empty", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.details).to.not.be.empty;
+});
