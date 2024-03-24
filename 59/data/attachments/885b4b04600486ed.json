@@ -1,0 +1,10 @@
+{
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjU4Nzk3ZWI2LTM1MjUtNGZlOC1iNDc1LTUyMWI0OWIzODE0OCIsIkN1c3RvbWVySWQiOiI4OGI2MDIxZC1mNDI0LTRlYjQtOGUxOC1iYjRmNTIzNDEyMzMiLCJVc2VyRnVsbE5hbWUiOiJCb2x1d2F0aWZlIE9sYXR1bmRlIiwiRW1haWwiOiJ0ZXN0ZXIuYWNjb3VudEBzdXJldHJlZS5jb20iLCJqdGkiOiJhODg3NzYxMi1lNDE3LTQ4NGMtYTEwNy02OWRjNWRlYTA5OTAiLCJQaG9uZU51bWJlciI6IisyMzQ4MDU1NTE1NTQ1IiwibmJmIjoxNzExMzA1MjQwLCJleHAiOjE3MTEzMDY0NDAsImlhdCI6MTcxMTMwNTI0MH0.jwgafK15YtuDJY8E--VBg7yTPqrt0UYMCb-OCdbuwRc",
+    "User-Agent": "PostmanRuntime/7.37.1",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "65073e4c-b458-4beb-94c3-20a3628b4f0b",
+    "Host": "nc-console-staging.suretree.com",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive"
+}
